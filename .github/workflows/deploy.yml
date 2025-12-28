@@ -29,7 +29,10 @@ jobs:
           pip install mystmd
 
       - name: Build site
-        run: myst build --html
+        run: |
+          export BASE_URL="/frontmatter-academico"
+          myst build --html
+          touch _build/html/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
