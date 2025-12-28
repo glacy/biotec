@@ -1,0 +1,37 @@
+version: 1
+project:
+  title: 'Diseño semántico de documentos académicos'
+  subtitle: "Frontmatter y metadatos en entornos reproducibles"
+  authors:
+    - name: Gerardo Lacy Mora
+  copyright: >
+    © 2025 glacy. Contenido distribuido bajo licencia Creative Commons
+    Atribución 4.0 Internacional (CC BY 4.0).
+  github: glacy/frontmatter-curso
+  toc:
+    - file: README.md
+    - title: "Fundamentos"
+      children:
+        - file: sessions/01-introduccion-frontmatter.md
+        - file: sessions/02-frontmatter-academico.md
+    - title: "Diseño semántico"
+      children:
+        - file: sessions/03-diseno-semantico-metadatos.md
+        - file: sessions/04-herencia-frontmatter.md
+    - title: "Integración y evaluación"
+      children:
+        - file: sessions/05-toc-estructura-pedagogica.md
+        - file: sessions/06-proyecto-integrador.md
+    - title: "Recursos"
+      children:
+        - file: sessions/anexo-sintaxis-yaml.md
+        - file: sessions/anexo-jupyterbook-vs-myst.md
+        - file: sessions/anexo-banco-ejemplos.md
+site:
+  title: 'Diseño semántico de documentos académicos'
+  subtitle: "Frontmatter y metadatos en entornos reproducibles"
+  options:
+    folders: true
+    logo: site_logo.svg
+    logo_dark: site_logo_dark.svg
+  template: book-theme

@@ -1,0 +1,13 @@
+## Tabla de sesiones y resultados de aprendizaje
+
+| Sesión | Título | Resultados de aprendizaje |
+|--------|--------|---------------------------|
+| 1 | Introducción al frontmatter | <ul><li>Comprender el concepto de frontmatter y su función semántica</li><li>Distinguir entre estructura visual y estructura semántica de un documento académico.</li><li>Identificar las limitaciones de la estructuración puramente visual en la publicación académica</li></ul> |
+| 2 | Frontmatter en contextos académicos | <ul><li>Identificar estructuras de frontmatter en diferentes contextos</li><li>Diseñar un frontmatter académico básico que describa correctamente un documento</li><li>Reconocer buenas prácticas y errores comunes en el uso de metadatos académicos.</li></ul> |
+| 3 | Diseño semántico de metadatos | <ul><li>Comprender la diferencia entre metadatos sintácticos y metadatos semánticos.</li><li>Diseñar metadatos consistentes, reutilizables y escalables.</li><li>Identificar errores semánticos comunes en documentación académica.</li></ul> |
+| 4 | Herencia y reutilización de frontmatter | <ul><li>Entender la herencia de metadatos en sistemas documentales</li><li>Diseñar un frontmatter base reutilizable para cursos académicos</li><li>Definir reglas de sobrescritura controlada de metadatos</li></ul> |
+| 5 | Estructura pedagógica con _toc.yml | <ul><li>Comprender el rol de _toc.yml como estructura pedagógica explícita.</li><li>Declarar estructuras curriculares mediante `_toc.yml`</li><li>Diseñar progresiones didácticas navegables</li></ul> |
+| 6 | Proyecto integrador | <ul><li>Integrar frontmatter, configuración global y estructura de tabla de contenidos en un sistema coherente</li><li>Producir un artefacto académico reproducible y semánticamente correcto</li></ul> |
+|  | Anexo: Banco de ejemplos comentados | <ul></ul> |
+|  | Anexo: Jupyter Book vs MyST | <ul></ul> |
+|  | Anexo: Guía de sintaxis YAML para humanos | <ul></ul> |
