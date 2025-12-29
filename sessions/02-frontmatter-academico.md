@@ -1,6 +1,7 @@
 ---
 title: "Frontmatter en contextos académicos"
 subtitle: "Identidad, autoría y contexto institucional"
+subject: "Sesión 2"
 session:
   number: 2
   type: lecture
