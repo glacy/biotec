@@ -68,13 +68,21 @@ Se incluyen scripts para verificar la integridad del entorno y el contenido:
 
 - **Verificar entorno técnico:**
   ```bash
+  # Linux / macOS / WSL
   ./verify_env.sh
+
+  # Windows (PowerShell)
+  .\verify_env.ps1
   ```
   Comprueba que todas las herramientas necesarias (MyST, Pandoc, Python, etc.) estén instaladas y accesibles.
 
 - **Validar frontmatter:**
   ```bash
+  # Linux / macOS / WSL
   ./validate_frontmatter.sh
+
+  # Windows
+  python validate_frontmatter.sh
   ```
   Analiza todos los archivos en `sessions/` para asegurar que cumplen con la estructura de metadatos requerida (título, objetivos, keywords, etc.).
 
