@@ -37,6 +37,11 @@ pre-commit install
 ```
 Esto validará el frontmatter automáticamente al intentar hacer un commit.
 
+> **Nota:** Si necesitas omitir estas validaciones en una emergencia:
+> - **Omitir en un commit:** `git commit -n` (o `--no-verify`)
+> - **Desinstalar hooks:** `pre-commit uninstall`
+> - **Desactivar configuración:** Renombra el archivo: `mv .pre-commit-config.yaml .pre-commit-config.yaml.disabled`
+
 ## Estructura del proyecto
 
 ```text
