@@ -131,10 +131,6 @@ Este es el cambio de paradigma que guía todo el curso.
 - [@shotton2009semantic]
 - [@wilkinson2016fair]
 
-## Cierre de la sesión
-
-Al finalizar esta sesión, el estudiante debe haber internalizado una idea central:
-
 > Un documento académico moderno no se define solo por lo que dice, sino por cómo declara formalmente lo que es.
 
 Esta idea será operacionalizada en las siguientes sesiones.

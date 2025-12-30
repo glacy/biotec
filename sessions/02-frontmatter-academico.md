@@ -146,7 +146,7 @@ Estos errores no suelen impedir la lectura humana, pero sí degradan la calidad 
 
 
 
-Lecturas y referencias
+## Lecturas y referencias
 
 - [@creativecommons]
 - [@coar_metadata]
