@@ -8,6 +8,9 @@ keywords:
   - sintaxis
   - validación
   - errores comunes
+learning_objectives:
+  - "Entender las reglas básicas de indentación y formato en YAML."
+  - "Identificar y corregir errores comunes de sintaxis."
 ---
 
 YAML (YAML Ain't Markup Language) es un estándar de serialización de datos amigable para humanos. Es el lenguaje utilizado para el frontmatter y la configuración de Jupyter Book.

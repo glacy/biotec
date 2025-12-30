@@ -8,6 +8,9 @@ keywords:
   - myst
   - ecosistema
   - migración
+learning_objectives:
+  - "Distinguir las diferencias entre Jupyter Book y el ecosistema MyST."
+  - "Comprender la evolución de la configuración de estructura de documentos."
 ---
 
 Es común confundir **Jupyter Book** con **MyST (Markedly Structured Text)**. Aunque están íntimamente relacionados, son herramientas distintas que están evolucionando a ritmos diferentes.

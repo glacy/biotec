@@ -7,6 +7,9 @@ keywords:
   - ejemplos
   - plantillas
   - copy-paste
+learning_objectives:
+  - "Proveer plantillas de metadatos listas para usar."
+  - "Visualizar ejemplos de estructura para diferentes tipos de documentos."
 ---
 
 Esta sección recopila los ejemplos generados en la carpeta `examples/` del repositorio, presentados aquí para facilitar su lectura y reutilización.

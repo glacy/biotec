@@ -62,6 +62,10 @@ for file_path in files:
 
         # Validar campos requeridos
         for field in required_fields:
+            # Eximir session.number para anexos
+            if field == "session.number" and ("anexo-" in file_path or frontmatter.get("type") == "reference"):
+                continue
+
             if get_nested(frontmatter, field) is None:
                 print(f"  {RED}✗ Falta campo obligatorio: .{field}{RESET}")
                 status = 1
