@@ -50,6 +50,35 @@ Si deseas ejecutar este curso en tu computadora:
     ```
     El sitio estará disponible en `http://localhost:3000`.
 
+## Reproducibilidad y Configuración Local
+
+Para garantizar un entorno de desarrollo consistente, este proyecto utiliza Anaconda/Miniconda.
+
+### 1. Configuración del entorno
+```bash
+# Crear el entorno desde el archivo de configuración
+conda env create -f environment.yml
+
+# Activar el entorno
+conda activate frontmatter-academico
+```
+
+### 2. Verificación y Validación
+Se incluyen scripts para verificar la integridad del entorno y el contenido:
+
+- **Verificar entorno técnico:**
+  ```bash
+  ./verify_env.sh
+  ```
+  Comprueba que todas las herramientas necesarias (MyST, Pandoc, Python, etc.) estén instaladas y accesibles.
+
+- **Validar frontmatter:**
+  ```bash
+  ./validate_frontmatter.sh
+  ```
+  Analiza todos los archivos en `sessions/` para asegurar que cumplen con la estructura de metadatos requerida (título, objetivos, keywords, etc.).
+
+
 ## Licencia
 
 Este material es abierto.

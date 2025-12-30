@@ -1,0 +1,16 @@
+name: frontmatter-academico
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pandoc
+  - nodejs>=18
+  - git
+
+  - jupyterlab
+  - quarto
+  - pip
+  - pyyaml
+  - pip:
+      - mystmd
+      - jupyter-book
