@@ -51,26 +51,7 @@ frontmatter-academico/
 └── .github/               # 🤖 Flujos de automatización (CI/CD)
 ```
 
-## Desarrollo local
 
-Si deseas ejecutar este curso en tu computadora:
-
-1.  **Requisitos:** Tener instalado Node.js o Python.
-
-2.  **Instalación:**
-    ```bash
-    # Vía Python
-    pip install mystmd
-
-    # O vía NPM
-    npm install -g mystmd
-    ```
-
-3.  **Ejecución:**
-    ```bash
-    myst start
-    ```
-    El sitio estará disponible en `http://localhost:3000`.
 
 ## Reproducibilidad y configuración local
 
@@ -115,6 +96,15 @@ Se incluyen scripts para verificar la integridad del entorno y el contenido:
   ```
   Escanea los archivos en `sessions/` y regenera automáticamente `sessions_table.md` con los títulos y objetivos de aprendizaje. **Nota:** Este paso se ejecuta automáticamente al desplegar el sitio vía GitHub Actions.
 
+
+### 3. Ejecución del servidor local
+
+Una vez configurado y verificado el entorno, puedes iniciar el servidor de desarrollo:
+
+```bash
+myst start
+```
+El sitio estará disponible en `http://localhost:3000`.
 
 ## Licencia
 
