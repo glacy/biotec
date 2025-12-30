@@ -4,7 +4,13 @@ import sys
 import yaml
 import re
 
-print("Validación estricta de frontmatter (YAML)...")
+# ANSI Colors
+CYAN = "\033[96m"
+GREEN = "\033[92m"
+RED = "\033[91m"
+RESET = "\033[0m"
+
+print(f"{CYAN}Validación estricta de frontmatter (YAML)...{RESET}")
 
 required_fields = [
     "title",
@@ -37,7 +43,7 @@ for file_path in files:
             
         match = re.search(r'^---\n(.*?)\n---', content, re.DOTALL)
         if not match:
-            print("  ✗ Sin frontmatter")
+            print(f"  {RED}✗ Sin frontmatter{RESET}")
             status = 1
             continue
             
@@ -45,28 +51,28 @@ for file_path in files:
         try:
             frontmatter = yaml.safe_load(frontmatter_str)
         except yaml.YAMLError as e:
-            print(f"  ✗ YAML inválido: {e}")
+            print(f"  {RED}✗ YAML inválido: {e}{RESET}")
             status = 1
             continue
             
         if not isinstance(frontmatter, dict):
-            print("  ✗ Frontmatter no es un diccionario")
+            print(f"  {RED}✗ Frontmatter no es un diccionario{RESET}")
             status = 1
             continue
 
         # Validar campos requeridos
         for field in required_fields:
             if get_nested(frontmatter, field) is None:
-                print(f"  ✗ Falta campo obligatorio: .{field}")
+                print(f"  {RED}✗ Falta campo obligatorio: .{field}{RESET}")
                 status = 1
 
     except Exception as e:
-        print(f"  ✗ Error leyendo archivo: {e}")
+        print(f"  {RED}✗ Error leyendo archivo: {e}{RESET}")
         status = 1
 
 if status == 0:
-    print("✔ Frontmatter válido en todas las sesiones")
+    print(f"{GREEN}✔ Frontmatter válido en todas las sesiones{RESET}")
     sys.exit(0)
 else:
-    print("✗ Errores detectados en el frontmatter")
+    print(f"{RED}✗ Errores detectados en el frontmatter{RESET}")
     sys.exit(1)

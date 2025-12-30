@@ -3,8 +3,14 @@ import glob
 import yaml
 import re
 
+# ANSI Colors
+CYAN = "\033[96m"
+GREEN = "\033[92m"
+RED = "\033[91m"
+RESET = "\033[0m"
+
 output_file = "sessions_table.md"
-print(f"Generando {output_file}...")
+print(f"{CYAN}Generando {output_file}...{RESET}")
 
 try:
     with open(output_file, "w", encoding="utf-8") as f:
@@ -42,10 +48,10 @@ try:
                     
                     f.write(f"| {number} | {title} | {formatted_objectives} |\n")
             except Exception as e:
-                print(f"Error procesando {file_path}: {e}")
+                print(f"{RED}Error procesando {file_path}: {e}{RESET}")
 
-    print(f"✔ Tabla generada en {output_file}")
+    print(f"{GREEN}✔ Tabla generada en {output_file}{RESET}")
 
 except Exception as e:
-    print(f"✗ Error fatal: {e}")
+    print(f"{RED}✗ Error fatal: {e}{RESET}")
     exit(1)
