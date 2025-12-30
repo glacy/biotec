@@ -11,6 +11,7 @@ on:
       - 'README.md'
       - 'INSTRUCTORS.md'
       - 'scripts/**'
+      - '.devcontainer/**'
 env:
   # `BASE_URL` determines, relative to the root of the domain, the URL that your site is served from.
   # E.g., if your site lives at `https://mydomain.org/myproject`, set `BASE_URL=/myproject`.
