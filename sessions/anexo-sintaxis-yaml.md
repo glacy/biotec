@@ -19,6 +19,21 @@ Aunque parece simple, es estricto. Esta guía resume las reglas vitales para evi
 
 ## Reglas de oro
 
+### 0. Los tres guiones (delimitadores)
+
+Todo bloque de frontmatter debe estar "encerrado" entre dos líneas que contienen exactamente tres guiones medios (`---`).
+
+- La primera línea del archivo debe ser `---`.
+- Al finalizar los metadatos, se cierra con `---`.
+
+```markdown
+---
+key: value
+---
+
+Aquí comienza el contenido...
+```
+
 ### 1. La indentación es sagrada
 
 En YAML, la estructura se define por espacios, no por llaves `{}` ni corchetes `[]` (aunque los soporta).
@@ -44,7 +59,7 @@ autor:
 
 Todo en YAML es un Diccionario (clave: valor) o una Lista (sucesión de elementos).
 
-#### Diccionarios (Mapas)
+#### Diccionarios (mapas)
 Objetos con propiedades nombradas. Se usa dos puntos y espacio (`: `).
 
 ```yaml
@@ -55,7 +70,7 @@ session:
 
 > **Ojo:** Siempre debe haber un espacio después de los dos puntos. `key:value` es inválido; `key: value` es correcto.
 
-#### Listas (Arreglos)
+#### Listas (arreglos)
 Sucesiones de elementos. Se usa un guion y espacio (`- `).
 
 ```yaml
@@ -65,7 +80,7 @@ keywords:
   - frontmatter
 ```
 
-### 3. Cadenas de texto (Strings)
+### 3. Cadenas de texto (strings)
 
 Generalmente no requieren comillas, a menos que contengan caracteres especiales (`:`, `{`, `[`, `#`, `!`).
 
