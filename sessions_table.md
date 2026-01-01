@@ -11,3 +11,4 @@
 |  | Banco de ejemplos comentados | <ul><li>Proveer plantillas de metadatos listas para usar.</li><li>Visualizar ejemplos de estructura para diferentes tipos de documentos.</li></ul> |
 |  | Jupyter Book vs MyST | <ul><li>Distinguir las diferencias entre Jupyter Book y el ecosistema MyST.</li><li>Comprender la evolución de la configuración de estructura de documentos.</li></ul> |
 |  | Guía de sintaxis YAML para humanos | <ul><li>Entender las reglas básicas de indentación y formato en YAML.</li><li>Identificar y corregir errores comunes de sintaxis.</li></ul> |
+|  | Presentación Resumen del Curso | <ul><li>Visualizar la estructura general del curso de forma gráfica.</li></ul> |

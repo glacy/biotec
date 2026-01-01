@@ -27,6 +27,7 @@ project:
         - file: sessions/anexo-sintaxis-yaml.md
         - file: sessions/anexo-jupyterbook-vs-myst.md
         - file: sessions/anexo-banco-ejemplos.md
+        - file: sessions/presentacion.md
 site:
   title: 'Diseño semántico de documentos académicos'
   subtitle: "Frontmatter y metadatos en entornos reproducibles"
