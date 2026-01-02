@@ -1,6 +1,11 @@
-import React from 'react';
+import { ReactNode } from 'react';
 
-const SlideHeader = ({ title, subtitle }) => {
+interface SlideHeaderProps {
+    title: ReactNode;
+    subtitle?: ReactNode;
+}
+
+const SlideHeader: React.FC<SlideHeaderProps> = ({ title, subtitle }) => {
     return (
         <div className="sticky top-0 z-50 left-0 right-0 h-auto py-6 lg:py-0 lg:h-[85px] flex items-center px-6 lg:px-16 bg-gradient-to-br from-primary-700 to-primary-900 dark:from-sky-900 dark:to-slate-900 shadow-md">
             <div>

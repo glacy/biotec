@@ -1,10 +1,25 @@
-import React from 'react';
+import { ReactNode } from 'react';
 
-const IconCard = ({ icon, title, children, variant = 'info', className = '' }) => {
+export type IconCardVariant =
+    | 'info'
+    | 'warning'
+    | 'outlined-info'
+    | 'outlined-warning'
+    | 'outlined-clean'
+    | 'clean';
 
+interface IconCardProps {
+    icon?: string;
+    title: ReactNode;
+    children?: ReactNode;
+    variant?: IconCardVariant;
+    className?: string;
+}
+
+const IconCard: React.FC<IconCardProps> = ({ icon, title, children, variant = 'info', className = '' }) => {
 
     // Helper to get classes based on variant
-    const getVariantClasses = (v) => {
+    const getVariantClasses = (v: IconCardVariant) => {
         switch (v) {
             case 'info': // Left Border
                 return {
@@ -43,6 +58,7 @@ const IconCard = ({ icon, title, children, variant = 'info', className = '' }) =
                     title: 'text-primary-800 dark:text-primary-300'
                 };
             default:
+                // Fallback safe return
                 return {
                     container: 'bg-primary-50 dark:bg-slate-800 border-l-4 border-primary-700 dark:border-primary-500',
                     icon: 'text-primary-800 dark:text-primary-300',

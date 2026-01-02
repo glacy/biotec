@@ -1,11 +1,16 @@
-import React from 'react';
+import { ReactNode } from 'react';
 import SlideLayout from './common/SlideLayout';
 import SlideHeader from './common/SlideHeader';
 import IconCard from './common/IconCard';
 import CallToAction from './common/CallToAction';
 import CodeBlock from './common/CodeBlock';
 
-const SlideWrapper = ({ children, isActive }) => (
+interface SlideWrapperProps {
+    children: ReactNode;
+    isActive: boolean;
+}
+
+const SlideWrapper: React.FC<SlideWrapperProps> = ({ children, isActive }) => (
     <div
         role="region"
         aria-roledescription="slide"
@@ -498,7 +503,11 @@ const Cierre = () => (
     </SlideLayout>
 );
 
-const Slides = ({ currentSlide }) => {
+interface SlidesProps {
+    currentSlide: number;
+}
+
+const Slides: React.FC<SlidesProps> = ({ currentSlide }) => {
     const slides = [
         <Portada />,
         <Sesion1 />,

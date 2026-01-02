@@ -1,6 +1,12 @@
-import React from 'react';
+import { ReactNode } from 'react';
 
-const CodeBlock = ({
+interface CodeBlockProps {
+    children?: ReactNode;
+    className?: string;
+    textColor?: string;
+}
+
+const CodeBlock: React.FC<CodeBlockProps> = ({
     children,
     className = "",
     textColor // Optional override, otherwise handled by classes

@@ -1,6 +1,12 @@
-import React from 'react';
+import { ReactNode } from 'react';
 
-const CallToAction = ({
+interface CallToActionProps {
+    icon?: string;
+    text: ReactNode;
+    className?: string;
+}
+
+const CallToAction: React.FC<CallToActionProps> = ({
     icon = "rocket_launch",
     text,
     className = ""

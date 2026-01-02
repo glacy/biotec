@@ -35,7 +35,7 @@ Slides are built using reusable, highly configurable components to ensure consis
 
 ## Technical Stack
 
--   **Framework**: [React 19](https://react.dev/)
+-   **Framework**: [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
 -   **Build Tool**: [Vite](https://vitejs.dev/)
 -   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 -   **Icons**: [Material Icons](https://fonts.google.com/icons)
@@ -44,14 +44,14 @@ Slides are built using reusable, highly configurable components to ensure consis
 
 ```bash
 src/
-├── App.jsx                 # App Shell: Main layout, navigation, and theme state
-├── main.jsx                # Entry point
+├── App.tsx                 # App Shell: Main layout, navigation, and theme state
+├── main.tsx                # Entry point
 ├── components/
-│   ├── Slides.jsx          # Registry: Imports and lists all slide components
+│   ├── Slides.tsx          # Registry: Imports and lists all slide components
 │   └── common/             # Reusable UI Kit
-│       ├── SlideLayout.jsx # Standard page wrapper
-│       ├── SlideHeader.jsx # Title/Subtitle component
-│       └── IconCard.jsx    # Content blocks with variants
+│       ├── SlideLayout.tsx # Standard page wrapper
+│       ├── SlideHeader.tsx # Title/Subtitle component
+│       └── IconCard.tsx    # Content blocks with variants
 └── index.css               # Global styles and Tailwind directives
 ```
 
@@ -66,9 +66,9 @@ npm run dev
 ```
 
 ### 2. Adding New Slides
-1.  Open `src/components/Slides.jsx`.
+1.  Open `src/components/Slides.tsx`.
 2.  Create a new component using the reusable primitives:
-    ```jsx
+    ```tsx
     import SlideLayout from './common/SlideLayout';
     import SlideHeader from './common/SlideHeader';
     import IconCard from './common/IconCard';
@@ -86,7 +86,7 @@ npm run dev
     );
     ```
 3.  Add it to the `slides` array in the main component:
-    ```jsx
+    ```tsx
     const slides = [
         <Portada />,
         <Sesion1 />,
@@ -108,11 +108,11 @@ Deploy the `dist` folder to GitHub Pages, Vercel, or Netlify.
 ### 4. Customizing Colors
 **Interactive Mode**: Click the **Palette Icon** (<i className="material-icons">palette</i>) in the navigation bar to open the color menu. Select any preset to instantly update the theme.
 
-**Changing Defaults**: To modify the default colors used when the app first loads (before any user selection), edit `src/App.jsx`:
+**Changing Defaults**: To modify the default colors used when the app first loads (before any user selection), edit `src/App.tsx`:
 
-```javascript
-// src/App.jsx
-const [primaryColor, setPrimaryColor] = useState(() => localStorage.getItem('primaryColor') || '#your-default-hex');
+```tsx
+// src/App.tsx
+const [primaryColor, setPrimaryColor] = useState<string>(() => localStorage.getItem('primaryColor') || '#your-default-hex');
 ```
 
 The application uses CSS variables and runtime palette generation to apply your choices globally without rebuilding.

@@ -106,22 +106,22 @@ myst start
 ```
 El sitio estará disponible en `http://localhost:3000`.
 
-## Presentación Dinámica (React)
+## Presentación interactiva (React)
 
-El proyecto incluye una presentación interactiva construida con **React, Tailwind CSS y Vite**, ubicada en `presentation-react/`.
+El proyecto incluye una presentación interactiva construida con **React, TypeScript, Tailwind CSS y Vite**, ubicada en `presentation-react/`.
 
-### Características Principales
-- **Sistema de Temas Dinámico**: Permite cambiar la paleta de colores en tiempo real (Azul, Violeta, Naranja, etc.), afectando semánticamente a todos los componentes.
-- **Modo Oscuro/Claro**: Soporte nativo con persistencia en `localStorage`.
+### Características principales
+- **Sistema de temas dinámico**: Permite cambiar la paleta de colores en tiempo real (Azul, Violeta, Naranja, etc.), afectando semánticamente a todos los componentes.
+- **Modo oscuro/claro**: Soporte nativo con persistencia en `localStorage`.
 - **Accesibilidad (A11y)**:
     - Cumplimiento de estándares de contraste WCAG AA mediante cálculo de luminancia relativa.
     - Navegación completa por teclado (Tab, Flechas, Enter).
     - Etiquetas ARIA y roles semánticos.
-- **Arquitectura de Componentes**:
+- **Arquitectura de componentes**:
     - Componentes reutilizables: `SlideLayout`, `IconCard`, `CodeBlock`, `CallToAction`.
     - Lógica de colores centralizada en `src/utils/colors.js`.
 
-### Comandos de Desarrollo
+### Comandos de desarrollo
 ```bash
 cd presentation-react
 npm install
