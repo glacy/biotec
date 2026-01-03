@@ -16,6 +16,12 @@ const Portada = () => (
             <p className="text-xl lg:text-2xl font-light text-primary-100 tracking-wide leading-relaxed max-w-3xl">
                 Curso sobre frontmatter, metadatos y publicación reproducible
             </p>
+            <div className="mt-8 flex flex-col items-center gap-1 text-primary-200">
+                <p className="text-xl font-medium">Gerardo Lacy Mora</p>
+                <a href="mailto:gerardolacymora@gmail.com" className="text-base hover:text-white transition-colors">
+                    gerardolacymora@gmail.com
+                </a>
+            </div>
         </div>
         <div className="relative lg:absolute lg:bottom-10 left-0 right-0 flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-16 text-primary-200 mt-10 lg:mt-0 pb-10 lg:pb-0 z-10">
             <div className="flex items-center gap-2">
