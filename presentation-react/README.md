@@ -126,13 +126,14 @@ High-impact banner usually placed at the bottom of a slide.
 - `icon` (string): Optional icon (default: "rocket_launch")
 
 **Example:**
-![CallToAction Component](./docs/images/call-to-action.png)
+
 ```tsx
 <CallToAction
   text="Ready to start? Click here to begin."
   icon="arrow_forward"
 />
 ```
+![CallToAction Component](./docs/images/call-to-action.png)
 
 ## Technical Stack
 
