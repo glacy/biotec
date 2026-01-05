@@ -16,6 +16,7 @@ A React-based, fully responsive presentation engine designed for academic and te
 - **Dark Mode Optimization**: Text shades automatically adjust (e.g., `primary-300` instead of `400`) to guarantee legibility against dark backgrounds.
 - **Keyboard Navigation**: Fully navigable via keyboard (Tab, Arrows, Enter), including the color palette and slide controls.
 - **Screen Readers**: Semantic HTML structure (`role="region"`, `aria-label`) for full JAWS/NVDA compatibility.
+- **Decorative Icons**: All decorative icons are marked with `aria-hidden="true"` to prevent visual noise for screen reader users.
 
 ### 🖥️ Modern "App Shell" Layout
 The presentation uses a robust CSS-driven architecture:
@@ -155,10 +156,12 @@ The project utilizes a custom Tailwind configuration (`tailwind.config.js`) to e
 
 ```bash
 src/
-├── App.tsx                 # App Shell: Main layout, navigation, and theme state
-├── main.tsx                # Entry point
+├── App.tsx                 # App Shell: Main layout and navigation
+├── main.tsx                # Entry point (Providers wrap App)
+├── context/
+│   └── ThemeContext.tsx    # Global state management for theming
 ├── hooks/
-│   ├── useTheme.ts         # Theme management logic (colors, dark mode)
+│   ├── useTheme.ts         # Hook to consume ThemeContext
 │   └── useSlides.ts        # Slide navigation logic
 ├── components/
 │   ├── Slides.tsx          # Registry: Main container that imports and renders slides
@@ -223,10 +226,31 @@ Deploy the `dist` folder to GitHub Pages, Vercel, or Netlify.
 ### 4. Customizing Colors
 **Interactive Mode**: Click the **Palette Icon** (<i className="material-icons">palette</i>) in the navigation bar to open the color menu. Select any preset to instantly update the theme.
 
-**Changing Defaults**: To modify the default colors used when the app first loads (before any user selection), edit `src/hooks/useTheme.ts` (or `App.tsx` if logic resides there):
+**Changing Defaults**: To modify the default colors used when the app first loads (before any user selection), edit `src/context/ThemeContext.tsx`:
 
 ```tsx
 const [primaryColor, setPrimaryColor] = useState<string>(() => localStorage.getItem('primaryColor') || '#your-default-hex');
 ```
 
 The application uses CSS variables and runtime palette generation to apply your choices globally without rebuilding.
+
+## AI usage declaration
+
+This presentation was developed with the assistance of artificial intelligence systems:
+
+-   **GLM (ChatGLM4)**: Assistance in content structuring, slide design, and UX/UI improvement suggestions.
+-   **Gemini**: Collaboration in JavaScript/CSS code generation, navigation system implementation, and accessibility optimization.
+
+### AI role
+
+-   Assistance in technical development (HTML, CSS, JavaScript)
+-   Suggestions for content structure and organization
+-   Code generation for reusable components
+-   Proposals for functionality and design improvements
+
+### Human responsibility
+
+-   Selection and validation of all content
+-   Critical editing and review of AI suggestions
+-   Final decision-making regarding structure and design
+-   Responsibility for the accuracy and quality of the final material
