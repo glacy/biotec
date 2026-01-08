@@ -17,7 +17,7 @@ env/
 # OS generated files
 .DS_Store
 
-syllabus-reader/
+syllabus-viewer/
 presentation-react/
 
 
