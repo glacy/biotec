@@ -1,6 +1,7 @@
 ---
+
 title: 'Estática: equilibrio'
-subtitle: Cuerpo rígido y Torque
+subtitle: Semana 7
 subject: Semana 7
 session:
   number: 7
@@ -10,16 +11,25 @@ course: Física para Biotecnología
 authors:
 - name: Gerardo Lacy Mora
 keywords:
-- Estática
+- 'Estática:'
 - equilibrio
-- cuerpo rígido
-- torque
 learning_objectives:
 - Distinguir entre los movimientos traslacionales puros y rotacionales puros de los
   cuerpos rígidos
 - Definir momento de fuerza
 - Describir la relación entre la ubicación del centro de gravedad y la estabilidad.
+activities: Modelado de proteínas como cuerpos rígidos para entender su estabilidad
+  conformacional.
+evaluation:
+- type: Formativa
+  description: 'Estudio de caso: Análisis de fallas ergonómicas o estructurales en
+    equipos.'
+references:
+- text: '[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice
+    Hall.'
+  pages: Secciones 8.1 a 8.2, pág. 256-269
 ---
+
 
 :::{note} Objetivos
 Al completar esta lección, serás capaz de:

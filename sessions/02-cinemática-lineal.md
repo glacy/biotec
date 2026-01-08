@@ -1,6 +1,7 @@
 ---
+
 title: Cinemática lineal
-subtitle: Desplazamiento, velocidad y aceleración
+subtitle: Semana 2
 subject: Semana 2
 session:
   number: 2
@@ -10,18 +11,24 @@ course: Física para Biotecnología
 authors:
 - name: Gerardo Lacy Mora
 keywords:
-- cinemática
+- Cinemática
 - lineal
-- vectores
-- aceleración
-- velocidad
 learning_objectives:
 - Definir distancia y calcular rapidez.
 - Explicar qué es una cantidad escalar.
-- Definir desplazamiento y calcular velocidad.
-- Explicar la diferencia entre cantidades escalares y vectoriales.
-- Interpretar gráficas de posición-tiempo y velocidad-tiempo para objetos en MRU y MRUA.
+- Definir desplazamiento, rapidez, velocidad y aceleración.
+- Explicar las ecuaciones de cinemática para aceleración constante.
+activities: 'Rastreo de movimiento celular: Uso de software (ImageJ/Fiji) para analizar
+  células móviles y graficar sus trayectorias.'
+evaluation:
+- type: Sumativa
+  description: Quiz sobre conceptos de cinemática.
+references:
+- text: '[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice
+    Hall.'
+  pages: Secciones 2.1 a 2.4, pág. 32-49
 ---
+
 
 :::{note} Objetivos
 Al completar esta lección, serás capaz de:

@@ -1,6 +1,7 @@
 ---
-title: 'Electricidad '
-subtitle: Circuitos, Ley de Ohm y Membranas
+
+title: Electricidad
+subtitle: Semana 13
 subject: Semana 13
 session:
   number: 13
@@ -11,15 +12,25 @@ authors:
 - name: Gerardo Lacy Mora
 keywords:
 - Electricidad
-- circuitos
-- ohm
-- membrana
-- iones
 learning_objectives:
 - Analizar circuitos eléctricos básicos utilizando la Ley de Ohm.
 - Relacionar los circuitos RC con la membrana celular y el transporte de iones.
 - Describir el modelo eléctrico equivalente de una membrana biológica.
+activities: 'Hackeando el Potencial de Acción: Uso de simuladores neuronales (e.g.,
+  Neurona de Hodgkin-Huxley simplificada) para manipular canales iónicos (resistencias)
+  y ver el efecto en el voltaje de membrana.'
+evaluation:
+- type: Sumativa
+  description: 'Taller Evaluado: Análisis de circuitos equivalentes de membrana.'
+references:
+- text: '[2] Jou Mirabent, D. (2009). Física para ciencias de la vida (2.ª ed.). McGraw-Hill
+    España. https://elibro.net/es/lc/itcr/titulos/50165'
+  pages: Secciones 6.6 a 6.8, pág. 281-297
+- text: '[3] Ortuño, M. (2019). Física para las ciencias de la vida. Editorial Tébar
+    Flores. https://elibro.net/es/lc/itcr/titulos/124788'
+  pages: Secciones 14.1 a 14.4, pág. 253-259
 ---
+
 
 :::{note} Objetivos
 Al completar esta lección, serás capaz de:

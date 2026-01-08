@@ -1,6 +1,7 @@
 ---
+
 title: Magnetismo
-subtitle: Campos Magnéticos e Instrumentación
+subtitle: Semana 14
 subject: Semana 14
 session:
   number: 14
@@ -11,14 +12,21 @@ authors:
 - name: Gerardo Lacy Mora
 keywords:
 - Magnetismo
-- campo magnético
-- fuerza magnética
-- resonancia
 learning_objectives:
 - Describir la fuerza magnética sobre partículas cargadas y corrientes.
 - Explicar el origen del campo magnético producido por corrientes.
 - Discutir ejemplos de magnetismo en sistemas biológicos.
+activities: Principios físicos detrás de la Resonancia Magnética Nuclear (RMN).
+evaluation:
+- type: Formativa
+  description: 'Mapa Mental Colaborativo: Aplicaciones del magnetismo en biotecnología
+    y medicina.'
+references:
+- text: '[3] Ortuño, M. (2019). Física para las ciencias de la vida. Editorial Tébar
+    Flores. https://elibro.net/es/lc/itcr/titulos/124788'
+  pages: Secciones 15.1 a 15.8, pág. 267-280
 ---
+
 
 :::{note} Objetivos
 Al completar esta lección, serás capaz de:

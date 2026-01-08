@@ -1,6 +1,7 @@
 ---
-title: Cantidades angulares y movimiento circular
-subtitle: Movimiento circular y aceleración centrípeta
+
+title: Energía mecánica
+subtitle: Semana 6
 subject: Semana 6
 session:
   number: 6
@@ -10,17 +11,25 @@ course: Física para Biotecnología
 authors:
 - name: Gerardo Lacy Mora
 keywords:
-- Movimiento circular
-- centrífuga
-- aceleración centrípeta
-- cantidades angulares
+- Energía
+- mecánica
 learning_objectives:
-- Definir las unidades de medida angulares
-- Describir y calcular la rapidez y la velocidad angulares y su relación con la rapidez
-  tangencial
-- Describir el movimiento circular uniforme
-- Calcular la aceleración centrípeta
+- Calcular el trabajo realizado por una fuerza constante en un desplazamiento.
+- Relacionar el trabajo con el cambio en la energía cinética.
+- Explicar el concepto de energía potencial y sus diferentes formas.
+- Aplicar el principio de conservación de la energía mecánica a sistemas físicos.
+- Definir y calcular la potencia mecánica en procesos físicos.
+activities: 'Molecu-olimpiadas: Calcular el trabajo y potencia de motores moleculares
+  (Kinesina/Miosina) vs motores macroscópicos.'
+evaluation:
+- type: Sumativa
+  description: 'Problemario: Cálculo de gasto energético en procesos biológicos.'
+references:
+- text: '[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice
+    Hall.'
+  pages: Secciones 7.1 a 7.4, pág. 217-231
 ---
+
 
 :::{note} Objetivos
 Al completar esta lección, serás capaz de:

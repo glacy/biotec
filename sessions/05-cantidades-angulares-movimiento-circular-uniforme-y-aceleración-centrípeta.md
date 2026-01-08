@@ -1,6 +1,7 @@
 ---
-title: Energía Mecánica
-subtitle: Trabajo, Energía Cinética y Potencial
+
+title: Cantidades angulares, movimiento circular uniforme y aceleración centrípeta
+subtitle: Semana 5
 subject: Semana 5
 session:
   number: 5
@@ -10,19 +11,31 @@ course: Física para Biotecnología
 authors:
 - name: Gerardo Lacy Mora
 keywords:
-- Energía
-- mecánica
-- trabajo
-- cinética
-- potencial
-- conservación
+- Cantidades
+- angulares,
+- movimiento
+- circular
+- uniforme
+- aceleración
+- centrípeta
 learning_objectives:
-- Calcular el trabajo realizado por una fuerza constante en un desplazamiento.
-- Relacionar el trabajo con el cambio en la energía cinética.
-- Explicar el concepto de energía potencial y sus diferentes formas.
-- Aplicar el principio de conservación de la energía mecánica a sistemas físicos.
-- Definir y calcular la potencia mecánica en procesos físicos.
+- Definir las unidades de medida angulares
+- Describir y calcular la rapidez y la velocidad angulares y su relación con la rapidez
+  tangencial
+- Describir el movimiento circular uniforme
+- Calcular la aceleración centrípeta
+activities: 'Desafío de la ultracentrífuga: Calcular RPM vs g para protocolos de separación
+  de orgánulos reales.'
+evaluation:
+- type: Sumativa
+  description: 'Informe técnico: Validación de protocolo de centrifugación (cálculos
+    de fuerza g).'
+references:
+- text: '[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice
+    Hall.'
+  pages: Secciones 5.1 a 5.6, pág. 140-167
 ---
+
 
 :::{note} Objetivos
 Al completar esta lección, serás capaz de:

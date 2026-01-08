@@ -1,4 +1,4 @@
-name: frontmatter-academico
+name: biotec-fisica
 channels:
   - conda-forge
 dependencies:
@@ -7,10 +7,10 @@ dependencies:
   - nodejs>=20
   - git
   - jupyterlab
-  - quarto
+  # - quarto
   - pip
   - pyyaml
   - pre-commit
   - pip:
       - mystmd
-      - jupyter-book
+      # - jupyter-book
