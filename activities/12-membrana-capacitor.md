@@ -75,3 +75,11 @@ El potencial de reposo de una neurona es aproximadamente $\Delta V = -70 \text{ 
 
 ### Entregable
 Hoja de cálculos con los resultados de las tres secciones y una breve conclusión sobre la intensidad del campo eléctrico celular.
+
+### Rúbrica de Evaluación
+
+| Criterio | 5 Puntos | 3 Puntos | 1 Punto |
+| :--- | :--- | :--- | :--- |
+| **Capacitancia Específica** | Cálculo correcto usando constante dieléctrica y espesor ($C/A$). Unidades correctas. | Error en unidades (F vs $\mu$F) o en el uso de $\epsilon_0$. | Cálculo incorrecto. |
+| **Capacitancia Celular** | Aplicación correcta del área superficial de la esfera. Resultado coherente. | Error geométrico en el cálculo del área. | No calcula la total. |
+| **Campo Eléctrico** | Determina la magnitud del campo gigante ($V/d$) y lo contextualiza. | Calcula el campo pero erra en órdenes de magnitud. | No calcula el campo. |

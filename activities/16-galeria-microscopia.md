@@ -59,3 +59,11 @@ Identifique la técnica utilizada para cada una de las siguientes descripciones 
 
 ### Entregable
 Tabla de respuestas (Imagen A = [Técnica], Por qué: ...) y respuestas a las preguntas de discusión.
+
+### Rúbrica de Evaluación
+
+| Criterio | 5 Puntos | 3 Puntos | 1 Punto |
+| :--- | :--- | :--- | :--- |
+| **Identificación** | Clasifica correctamente las 4 imágenes (SEM, TEM, Confocal, Campo Claro). | Identifica correctamente 2-3 imágenes. | Falla en la mayoría. |
+| **Justificación** | Utiliza las 'pistas físicas' (3D, corte, color, resolución) para justificar su elección. | Justificación circular ("es SEM porque parece SEM"). | Sin justificación. |
+| **Discusión** | Explica correctamente la naturaleza de las imágenes electrónicas (sin color). | Explicación incompleta. | Conceptos erróneos. |

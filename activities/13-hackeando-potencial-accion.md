@@ -77,3 +77,11 @@ La TTX, veneno del pez globo, bloquea físicamente el poro del canal de Sodio.
 
 ### Entregable
 Un reporte corto con capturas de pantalla del simulador mostrando: Reposo, Pico del Potencial de Acción, y el intento fallido bajo efectos de la "toxina".
+
+### Rúbrica de Evaluación
+
+| Criterio | 5 Puntos | 3 Puntos | 1 Punto |
+| :--- | :--- | :--- | :--- |
+| **Simulación** | Capturas de pantalla claras que demuestran los estados de Reposo, Despolarización y Bloqueo. | Capturas presentes pero incompletas o poco claras. | No hay evidencia de simulación. |
+| **Análisis de Eventos** | Describe correctamente el flujo iónico y voltaje en cada etapa. | Descripción vaga sin mencionar iones específicos o cambios de resistencia. | Análisis incorrecto. |
+| **Discusión** | Conecta correctamente la simulación con la anestesia local (bloqueo Na) y la capacitancia. | Conexión débil o explicación incorrecta. | No responde discusión. |

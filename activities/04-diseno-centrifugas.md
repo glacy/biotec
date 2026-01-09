@@ -82,3 +82,11 @@ Un informe técnico breve (1 página) que incluya:
 2.  El Diagrama de Cuerpo Libre (DCL) correcto.
 3.  Las ecuaciones de la Segunda Ley de Newton derivadas del DCL.
 4.  La explicación de por qué el fondo del tubo es el punto crítico de falla.
+
+### Rúbrica de Evaluación
+
+| Criterio | 5 Puntos | 3 Puntos | 1 Punto |
+| :--- | :--- | :--- | :--- |
+| **Esquema y DCL** | DCL claro y correcto con fuerzas reales (N, mg) y vectores bien orientados. | DCL presenta fuerzas ficticias (centrífuga) o vectores mal orientados. | No hay DCL o es ininteligible. |
+| **Ecuaciones de Newton** | Ecuaciones $\Sigma F = ma$ planteadas correctamente para ejes radial y vertical. | Ecuaciones planteadas pero con errores de signo o componentes faltantes. | No plantea ecuaciones dinámicas. |
+| **Análisis de Falla** | Explica correctamente la falla relacionándola con la Fuerza Normal y la Tercera Ley de Newton. | Explica la falla de forma intuitiva sin usar conceptos físicos rigurosos. | Explicación incorrecta o ausente. |

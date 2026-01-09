@@ -68,3 +68,11 @@ Apunte su espectroscopio a las siguientes fuentes y dibuje lo que ve (¡Cuidado:
 
 ### Entregable
 Fotos del dispositivo construido y los dibujos de los espectros observados comparando la luz solar vs la luz fluorescente.
+
+### Rúbrica de Evaluación
+
+| Criterio | 5 Puntos | 3 Puntos | 1 Punto |
+| :--- | :--- | :--- | :--- |
+| **Construcción** | Espectroscopio funcional que separa claramente los colores (rendija fina). | Funciona parcialmente (espectro borroso por rendija muy ancha). | No funciona. |
+| **Observación** | Diferencia correctamente entre espectro continuo (Sol) y de líneas (Fluorescente). | Observa espectros pero no nota la diferencia clave. | Observaciones inventadas o incorrectas. |
+| **Discusión** | Entiende el papel de la red de difracción (CD vs DVD) y sus limitaciones. | Respuesta intuitiva sin base óptica. | No responde. |

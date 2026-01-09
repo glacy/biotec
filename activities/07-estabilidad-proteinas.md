@@ -68,3 +68,11 @@ El anticuerpo está anclado a una superficie por su base (dominio Fc). Un flujo 
 
 ### Entregable
 Cálculos detallados del CM y del torque máximo, con un diagrama claro mostrando los vectores de posición y fuerza.
+
+### Rúbrica de Evaluación
+
+| Criterio | 5 Puntos | 3 Puntos | 1 Punto |
+| :--- | :--- | :--- | :--- |
+| **Centro de Masa** | Procedimiento correcto para CM compuesto ($m_i y_i$). Resultado preciso. | Plantea la fórmula pero comete errores geométricos o aritméticos. | No calcula el CM o usa fórmulas incorrectas. |
+| **Cálculo de Torque** | Identifica brazo de palanca y fuerza correctamente. Torque calculado bien. | Identifica mal el brazo de palanca o el ángulo. | No calcula torque. |
+| **Análisis Estabilidad** | Compara el torque calculado con el límite de ruptura y concluye correctamente. | Compara pero no concluye o viceversa. | Análisis ausente. |

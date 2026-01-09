@@ -78,3 +78,11 @@ Un documento con:
 1.  Los cálculos detallados de las RPM para ambos pasos.
 2.  El cálculo de la fuerza $g$ en $r_{min}$.
 3.  Su respuesta a la pregunta de reflexión sobre reproducibilidad.
+
+### Rúbrica de Evaluación
+
+| Criterio | 5 Puntos | 3 Puntos | 1 Punto |
+| :--- | :--- | :--- | :--- |
+| **Cálculo de RPM** | Cálculos de RPM precisos y consistentes para ambos valores de RCF (600g y 15,000g). | Errores menores de cálculo o unidades, pero procedimiento correcto. | Procedimiento incorrecto para despejar RPM. |
+| **Análisis de Gradiente ($r_{min}$)** | Calcula correctamente la RCF en la parte superior del tubo y discute su impacto. | Calcula la RCF pero no discute la implicación práctica. | No realiza el cálculo del gradiente. |
+| **Reflexión** | Argumenta sólidamente sobre la importancia del RCF para la reproducibilidad científica. | Respuesta breve o genérica sobre la reproducibilidad. | No responde la pregunta de reflexión. |

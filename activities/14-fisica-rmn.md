@@ -70,3 +70,11 @@ La imagen no es una foto; es un mapa de señales.
 
 ### Entregable
 Cálculos de las frecuencias y una breve explicación (3 líneas) de por qué los pacientes con marcapasos no pueden hacerse una RMN.
+
+### Rúbrica de Evaluación
+
+| Criterio | 5 Puntos | 3 Puntos | 1 Punto |
+| :--- | :--- | :--- | :--- |
+| **Cálculo de Larmor** | Cálculo correcto de frecuencias (MHz) para ambos campos. | Error de unidades (T vs MHz) o aritmético. | Fórmula incorrecta. |
+| **Seguridad (Marcapasos)** | Explicación clara sobre riesgos (fuerza magnética o inducción de corrientes). | Explicación vaga ("es peligroso") sin fundamento físico. | No explica. |
+| **Análisis Conceptual** | Comprende la relación entre campo $B_0$ y frecuencia de resonancia. | Confunde conceptos. | Análisis ausente. |

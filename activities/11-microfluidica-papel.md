@@ -79,3 +79,11 @@ Calcule el $Re$ para dos organismos asumiendo que el fluido es agua ($\rho = 100
 
 ### Entregable
 Fotos o dibujos de sus experimentos en vaso y papel, junto con los cálculos de $Re$ y las respuestas a la discusión.
+
+### Rúbrica de Evaluación
+
+| Criterio | 5 Puntos | 3 Puntos | 1 Punto |
+| :--- | :--- | :--- | :--- |
+| **Dispositivo Microfluídico** | Canal "Y" funcional que demuestra flujo laminar (colores no se mezclan inmediatamente). | Construye el canal pero hay fugas o mezcla turbulenta (fallo de diseño). | No construye el dispositivo. |
+| **Cálculo de Reynolds** | Aplica fórmula correctamente ($Re < 2000$ para E. coli, $Re > 4000$ para ballena). | Errores de unidades o aritmética en el cálculo. | Fórmula incorrecta o resultados ilógicos. |
+| **Análisis** | Diferencia claramente regímenes de flujo y conecta con la escala biológica. | Diferencia regímenes pero no conecta con la biología. | Análisis pobre. |

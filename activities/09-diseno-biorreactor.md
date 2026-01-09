@@ -67,3 +67,11 @@ Para controlar el flujo, se instala una válvula de aguja que reduce el diámetr
 
 ### Entregable
 Un breve informe de diseño con los cálculos de $Q$, el diámetro de tubería seleccionado (en pulgadas comerciales si es posible, o en mm) y la evaluación de seguridad de la válvula.
+
+### Rúbrica de Evaluación
+
+| Criterio | 5 Puntos | 3 Puntos | 1 Punto |
+| :--- | :--- | :--- | :--- |
+| **Cálculo de Caudal** | Conversión correcta de tiempo de residencia a caudal ($Q=V/\tau$) en unidades SI. | Error en conversión de unidades (horas a segundos). | Cálculo de caudal incorrecto. |
+| **Dimensionamiento** | Aplica Ecuación de Continuidad y despeja diámetro mínimo correctamente. | Error algebraico al despejar diámetro del área. | Dimensionamiento arbitrario o incorrecto. |
+| **Seguridad Celular** | Evalúa velocidad en la válvula, compara con límite y dictamina riesgo celular correctamente. | Calcula velocidad pero no compara o concluye mal. | No evalúa la válvula. |

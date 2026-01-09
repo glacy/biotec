@@ -67,3 +67,11 @@ Un "Perfil reológico" (una hoja por grupo) que incluya:
 1.  Clasificación del fluido.
 2.  La gráfica dibujada.
 3.  Un ejemplo de aplicación real.
+
+### Rúbrica de Evaluación
+
+| Criterio | 5 Puntos | 3 Puntos | 1 Punto |
+| :--- | :--- | :--- | :--- |
+| **Gráfica Reológica** | Gráfica $\eta$ vs $\dot{\gamma}$ cualitativamente correcta para el fluido asignado. | Gráfica con ejes invertidos o tendencia incorrecta. | Gráfica ausente o sin sentido. |
+| **Argumentación** | Defensa lógica conectando el comportamiento físico con la ventaja biológica/industrial. | Argumentos vagos o no relacionados con la física del fluido. | No presenta defensa. |
+| **Clasificación** | Identifica correctamente el tipo de fluido (Pseudoplástico/Dilatante/Bingham). | Confunde la clasificación (ej. dice que es Newtoniano). | No clasifica. |

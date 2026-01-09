@@ -85,3 +85,11 @@ $$ \text{Densidad} = \frac{\text{Potencia (W)}}{\text{Masa (kg)}} $$
 
 ### Entregable
 Un cuadro comparativo con los valores de $W$, $P$ y $P/m$ para ambos competidores, y sus conclusiones.
+
+### Rúbrica de Evaluación
+
+| Criterio | 5 Puntos | 3 Puntos | 1 Punto |
+| :--- | :--- | :--- | :--- |
+| **Cálculos Microscópicos** | Determina correctamente trabajo, velocidad y potencia de la Kinesina (manejo de potencias de 10). | Errores en el manejo de unidades o notación científica, resultado cercano. | Cálculos incorrectos o ausentes. |
+| **Cálculos Macroscópicos** | Determina correctamente el trabajo y potencia del atleta. | Errores menores de aritmética. | Confunde masa con peso o trabajo con potencia. |
+| **Densidad de Potencia** | Realiza la normalización por masa correctamente y concluye basado en los datos. | Normalización incorrecta pero intenta comparar. | No calcula la densidad de potencia. |

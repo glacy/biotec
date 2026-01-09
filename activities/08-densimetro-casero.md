@@ -80,3 +80,11 @@ El profesor le entregará 3 "muestras de fermentación" (soluciones con diferent
 ### Entregable
 1.  Foto de su densímetro calibrado.
 2.  Tabla con los resultados de las muestras desconocidas.
+
+### Rúbrica de Evaluación
+
+| Criterio | 5 Puntos | 3 Puntos | 1 Punto |
+| :--- | :--- | :--- | :--- |
+| **Construcción y Calibración** | Densímetro funcional, estable y con marcas de calibración claras (0% / Alto). | Funcional pero inestable o marcas confusas. | No funciona o no está calibrado. |
+| **Medición** | Ordena correctamente las 3 muestras por densidad (azúcar). | Ordena incorrectamente 1 muestra. | Orden aleatorio o incorrecto. |
+| **Comprensión Conceptual** | Explica correctamente funcionamiento basado en Arquímedes. | Explicación vaga o incompleta. | No entiende por qué flota más o menos. |
