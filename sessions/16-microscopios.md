@@ -78,3 +78,7 @@ Nuevas técnicas (STED, PALM) usan trucos fluorescentes para "romper" el límite
 
 ```{include} ../exercises/16-limite-fisico.md
 ```
+
+## Referencias
+
+@ortuno2019fisica

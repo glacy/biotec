@@ -151,9 +151,5 @@ Se presentarán 3 gráficas de movimiento ($x$ vs $t$) y los estudiantes deberá
 
 ## Referencias
 
-{cite}:p`wilson2007fisica`
-{cite}:p`jou2009fisica`
+@wilson2007fisica
 
-```{bibliography}
-:filter: docname in docnames
-```

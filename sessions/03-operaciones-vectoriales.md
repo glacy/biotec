@@ -112,3 +112,7 @@ $$ \vec{F}_{neta} = \sum \vec{F} = \vec{F}_1 + \vec{F}_2 + \dots $$
 
 ```{include} ../exercises/03-centrifuga-molecular.md
 ```
+
+## Referencias
+
+@wilson2007fisica

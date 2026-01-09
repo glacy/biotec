@@ -105,3 +105,7 @@ El análisis teórico de la velocidad de sedimentación en función de la aceler
 
 ```{include} ../exercises/06-calculo-protocolo.md
 ```
+
+## Referencias
+
+@wilson2007fisica

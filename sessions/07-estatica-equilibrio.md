@@ -91,3 +91,7 @@ Aunque en biotecnología molecular esto es menos directo, los modelos de **"Hing
 
 ```{include} ../exercises/07-equilibrio-micropipeta.md
 ```
+
+## Referencias
+
+@wilson2007fisica

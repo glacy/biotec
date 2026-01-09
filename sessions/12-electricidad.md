@@ -92,3 +92,9 @@ Dispositivo para almacenar carga y energía.
 
 ```{include} ../exercises/12-fuerza-membrana.md
 ```
+
+## Referencias
+
+@jou2009fisica
+
+@ortuno2019fisica

@@ -7,6 +7,8 @@ project:
   copyright: '© 2026 glacy. Contenido distribuido bajo licencia Creative Commons Atribución
     4.0 Internacional (CC BY 4.0).'
   github: glacy/biotec
+  bibliography:
+  - references.bib
   toc:
     - file: programa.md
     - title: Semana 1

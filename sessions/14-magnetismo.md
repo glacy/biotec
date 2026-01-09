@@ -83,3 +83,7 @@ Los campos intensos de un MRI no dañan los tejidos biológicos (no son ionizant
 
 ```{include} ../exercises/14-selector-velocidad.md
 ```
+
+## Referencias
+
+@ortuno2019fisica

@@ -19,17 +19,17 @@ keywords:
 ![](https://img.shields.io/badge/Tipo-Taller-orange) ![](https://img.shields.io/badge/Duración-80_min-yellow) ![](https://img.shields.io/badge/Modalidad-Grupal-blue) ![](https://img.shields.io/badge/Dificultad-Intermedio-yellow)
 <!-- ACTIVITY-BADGES -->
 
-### Descripción de la Actividad
+### Descripción de la actividad
 En este taller, los estudiantes analizarán una receta de cocina "compleja" (que utilice unidades del sistema imperial o medidas no estándar como tazas, cucharadas, onzas, °F) y realizarán un proceso sistemático de estimación física y conversión rigurosa al Sistema Internacional de Unidades (SI).
 
 Esta actividad simula un desafío común en la ciencia y la ingeniería: la necesidad de estandarizar protocolos que provienen de fuentes diversas para garantizar la reproducibilidad.
 
-### 2. Objetivos de Aprendizaje
+### Objetivos de aprendizaje
 1.  **Estimar** magnitudes físicas basándose en la intuición y referencias cotidianas.
 2.  **Aplicar** factores de conversión y análisis dimensional para traducir unidades no estándar al SI.
 3.  **Analizar** la importancia de la precisión y la estandarización en contextos científicos (comparando con errores históricos como el de la *Mars Climate Orbiter*).
 
-### 3. Instrucciones paso a paso
+### Instrucciones paso a paso
 
 #### Fase 1: Selección y Estimación (20 min)
 1.  **Selección:** Elijan una receta compleja que les llame la atención (ej. un pastel elaborado, un guiso exótico). La receta **debe** contener al menos:
@@ -58,7 +58,7 @@ Esta actividad simula un desafío común en la ciencia y la ingeniería: la nece
 
 ---
 
-### 4. Entregable
+### Entregable
 Un documento corto (PDF o físico) que incluya:
 1.  **La Receta Original** (copiada o screenshot).
 2.  **Tabla de Resultados:**
@@ -71,7 +71,7 @@ Un documento corto (PDF o físico) que incluya:
 
 ---
 
-### 5. Rúbrica de Evaluación
+### Rúbrica de evaluación
 
 | Criterio | Excelente (5 pts) | Satisfactorio (3-4 pts) | Necesita Mejora (0-2 pts) |
 | :--- | :--- | :--- | :--- |

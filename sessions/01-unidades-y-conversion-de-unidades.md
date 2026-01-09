@@ -145,9 +145,8 @@ Se entregará una hoja de trabajo individual al final de la sesión para verific
 
 ## Referencias
 
-{cite}:p`wilson2007fisica`
-{cite}:p`bipm2019si`
+@wilson2007fisica
 
-```{bibliography}
-:filter: docname in docnames
-```
+@bipm2019si
+
+

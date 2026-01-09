@@ -94,3 +94,9 @@ Este aumento de presión dilata aún más la pared debilitada. ¡Un círculo vic
 
 ```{include} ../exercises/09-jeringa-estenosis.md
 ```
+
+## Referencias
+
+@wilson2007fisica
+
+@jou2009fisica

@@ -93,3 +93,7 @@ Según Poiseuille, la resistencia es enorme.
 
 ```{include} ../exercises/10-transfusion-poiseuille.md
 ```
+
+## Referencias
+
+@ortuno2019fisica

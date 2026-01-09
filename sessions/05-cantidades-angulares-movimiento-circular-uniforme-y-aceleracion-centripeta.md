@@ -117,3 +117,7 @@ $$ P = \frac{W}{\Delta t} $$
 
 ```{include} ../exercises/05-bombeo-cardiaco.md
 ```
+
+## Referencias
+
+@wilson2007fisica

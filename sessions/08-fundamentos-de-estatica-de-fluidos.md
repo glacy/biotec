@@ -106,3 +106,9 @@ Las moléculas en la superficie de un líquido sienten una atracción neta hacia
 
 ```{include} ../exercises/08-biorreactor-flotacion.md
 ```
+
+## Referencias
+
+@wilson2007fisica
+
+@jou2009fisica

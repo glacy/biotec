@@ -90,3 +90,9 @@ $$ V_{eq} = \frac{RT}{zF} \ln\left(\frac{[Ion]_{ext}}{[Ion]_{int}}\right) $$
 
 ```{include} ../exercises/13-patch-clamp.md
 ```
+
+## Referencias
+
+@jou2009fisica
+
+@ortuno2019fisica

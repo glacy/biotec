@@ -99,3 +99,9 @@ Este famoso concepto (E.M. Purcell) explica la realidad de las bacterias ($Re \a
 
 ```{include} ../exercises/11-reynolds-bacteria.md
 ```
+
+## Referencias
+
+@ortuno2019fisica
+
+@jou2009fisica

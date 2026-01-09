@@ -89,3 +89,7 @@ $$ A = \epsilon \cdot l \cdot C $$
 
 ```{include} ../exercises/15-dna-cuantificacion.md
 ```
+
+## Referencias
+
+@ortuno2019fisica

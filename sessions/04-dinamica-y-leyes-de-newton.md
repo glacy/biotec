@@ -105,3 +105,7 @@ El DCL es la herramienta más potente para resolver problemas de dinámica. Cons
 
 ```{include} ../exercises/04-dcl-proteina.md
 ```
+
+## Referencias
+
+@wilson2007fisica
