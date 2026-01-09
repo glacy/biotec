@@ -48,6 +48,7 @@ Esto validará el frontmatter automáticamente al intentar hacer un commit.
 biotecnologia/
 ├── assets/                # 🎨 Recursos estáticos (logos, imágenes)
 ├── scripts/               # 🛠️ Scripts de mantenimiento y automatización
+├── tests/                 # 🧪 Pruebas unitarias para los scripts
 ├── myst.yml               # ⚙️ Configuración del sitio y metadatos globales
 ├── programa.md            # 📄 Programa del curso
 ├── planeamiento.json      # 📋 Datos estructurados del planeamiento 
@@ -64,6 +65,13 @@ El curso sigue una arquitectura modular donde los contenidos prácticos no resid
 - **`exercises/`**: Contiene los ejercicios propuestos, estructurados semánticamente mediante la directiva `{exercise}` de MyST.
 Esta separación permite reutilizar componentes y facilita el mantenimiento.
 
+**Nota sobre la estructura de contenido:**
+El curso opera como un "Template Starter" impulsado por datos. **`planeamiento.json`** es la única fuente de verdad para:
+1.  **Metadatos del sitio:** Título, autores, semestre y copyright en `myst.yml` (sincronizados vía `scripts/sync_myst.py`).
+2.  **Contenido de las sesiones:** Los archivos en `sessions/` se generan inyectando metadatos del JSON (objetivos, actividades, referencias) en el frontmatter.
+3.  **Visualizador Web:** La aplicación React en `syllabus-viewer/` consume el mismo JSON para renderizar la interfaz.
+
+Para modificar información del curso, edite `planeamiento.json` y ejecute los scripts de actualización.
 
 
 ## Reproducibilidad y configuración local
@@ -106,13 +114,17 @@ Se incluyen scripts para verificar la integridad del entorno y el contenido:
 
 - **Generación de skeleton:**
   ```bash
-  # Generar todas las sesiones
+  # Sincronizar myst.yml y generar sesiones
+  python3 scripts/sync_myst.py
   python3 scripts/generate_sessions.py
 
-  # Generar una semana específica (no sobreescribe, crea copia)
+  # Generar una semana específica
   python3 scripts/generate_sessions.py --week 1
   ```
-  Script automatizado refactorizado que utiliza `planeamiento.json` como única fuente de verdad (eliminando la dependencia de Excel). Cuenta con **detección de archivos existentes** para evitar la sobreescritura accidental y soporte para argumentos CLI.
+  Script automatizado que utiliza `planeamiento.json` como única fuente de verdad. El flujo de trabajo recomendado es:
+  1. Modificar `planeamiento.json` (metadata o contenido semanal).
+  2. Ejecutar `python3 scripts/sync_myst.py` para actualizar `myst.yml`.
+  3. Ejecutar `python3 scripts/generate_sessions.py` para actualizar los archivos Markdown.
 
 
 ### 3. Ejecución del servidor local
@@ -123,33 +135,6 @@ Una vez configurado y verificado el entorno, puedes iniciar el servidor de desar
 myst start
 ```
 El sitio estará disponible en `http://localhost:3000`.
-
-## Presentación interactiva (React)
-
-El proyecto incluye una presentación interactiva construida con **React, TypeScript, Tailwind CSS y Vite**, ubicada en `presentation-react/`.
-
-### Características principales
-- **Sistema de temas dinámico**: Permite cambiar la paleta de colores en tiempo real (Azul, Violeta, Naranja, etc.), afectando semánticamente a todos los componentes.
-- **Modo oscuro/claro**: Soporte nativo con persistencia en `localStorage`.
-- **Accesibilidad (A11y)**:
-    - Cumplimiento de estándares de contraste WCAG AA mediante cálculo de luminancia relativa.
-    - Navegación completa por teclado (Tab, Flechas, Enter).
-    - Etiquetas ARIA y roles semánticos.
-- **Arquitectura de componentes**:
-    - Componentes reutilizables: `SlideLayout`, `IconCard`, `CodeBlock`, `CallToAction`, `MathBlock` (KaTeX), `ImageBlock`.
-    - Lógica de colores centralizada en `src/utils/colors.js`.
-    - **Documentación**: Todos los componentes comunes cuentan con documentación JSDoc completa.
-    - **Modularidad**: Las diapositivas se cargan dinámicamente desde `src/components/slides/`, facilitando el mantenimiento.
-
-### Comandos de desarrollo
-```bash
-cd presentation-react
-npm install
-npm run dev   # Iniciar servidor de desarrollo en localhost:5173
-npm run build # Generar build de producción (single-file)
-```
-
-**Nota:** El pipeline de CI/CD (`deploy.yml`) construye y despliega automáticamente esta presentación en cada push a main.
 
 
 ## Asistencia de IA

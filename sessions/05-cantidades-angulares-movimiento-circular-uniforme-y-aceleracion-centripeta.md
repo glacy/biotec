@@ -9,7 +9,7 @@ session:
   modality: Presencial
 course: Física para Biotecnología
 authors:
-- name: Gerardo Lacy Mora
+- name: Escuela de Física
 keywords:
 - Cantidades
 - angulares,
@@ -35,6 +35,7 @@ references:
     Hall.'
   pages: Secciones 5.1 a 5.6, pág. 140-167
 ---
+
 
 
 :::{note} Objetivos

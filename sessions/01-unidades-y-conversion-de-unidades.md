@@ -9,7 +9,7 @@ session:
   modality: Presencial
 course: Física para Biotecnología
 authors:
-- name: Gerardo Lacy Mora
+- name: Escuela de Física
 keywords:
 - Unidades
 - conversión
@@ -31,6 +31,7 @@ references:
     Hall.'
   pages: Secciones 1.1 a 1.5, pág. 23-25
 ---
+
 
 
 :::{note} Objetivos

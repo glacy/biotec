@@ -9,7 +9,7 @@ session:
   modality: Presencial
 course: Física para Biotecnología
 authors:
-- name: Gerardo Lacy Mora
+- name: Escuela de Física
 keywords:
 - Óptica
 - fenómenos
@@ -28,6 +28,7 @@ references:
     Flores. https://elibro.net/es/lc/itcr/titulos/124788'
   pages: Secciones 17.1 a 17.3, pág. 303-307
 ---
+
 
 
 :::{note} Objetivos

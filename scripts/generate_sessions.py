@@ -15,6 +15,8 @@ import re
 JSON_FILE = 'planeamiento.json'
 OUTPUT_DIR = 'sessions'
 
+import unicodedata
+
 def generate_filename(week_num, title):
     """
     Generates a web-safe filename from the week number and title.
@@ -26,8 +28,11 @@ def generate_filename(week_num, title):
     Returns:
         str: Filename like '01-session-title.md'.
     """
+    # Normalize unicode characters (e.g., ó -> o)
+    normalized_title = unicodedata.normalize('NFKD', title).encode('ascii', 'ignore').decode('ascii')
+    
     # Sanitize title for filename
-    safe_title = re.sub(r'[^\w\s-]', '', title).strip().lower()
+    safe_title = re.sub(r'[^\w\s-]', '', normalized_title).strip().lower()
     safe_title = re.sub(r'[-\s]+', '-', safe_title)
     return f"{int(week_num):02d}-{safe_title}.md"
 
@@ -49,7 +54,14 @@ def main():
     print(f"Reading {JSON_FILE}...")
     try:
         with open(JSON_FILE, 'r', encoding='utf-8') as f:
-            data = json.load(f)
+            full_data = json.load(f)
+            # Support both new (dict with weeks) and old (list) schemas for backward compatibility
+            if isinstance(full_data, dict) and 'weeks' in full_data:
+                data = full_data['weeks']
+                metadata = full_data.get('metadata', {})
+            else:
+                data = full_data
+                metadata = {}
     except Exception as e:
         print(f"Error reading JSON file: {e}")
         return
@@ -61,6 +73,16 @@ def main():
         if not data:
             print(f"No data found for week {args.week}")
             return
+
+    # Defaults from metadata or fallback
+    course_name = metadata.get('title', "Física para Biotecnología")
+    authors_list = metadata.get('authors', ["Gerardo Lacy Mora"])
+    # Ensure authors is a list of dicts for the frontmatter format
+    if isinstance(authors_list, list) and authors_list and isinstance(authors_list[0], str):
+        authors_fm = [{'name': a} for a in authors_list]
+    else:
+        authors_fm = [{'name': "Gerardo Lacy Mora"}]
+
 
     for entry in data:
         try:
@@ -93,8 +115,8 @@ def main():
                     'duration': "TBD",
                     'modality': "Presencial"
                 },
-                'course': "Física para Biotecnología",
-                'authors': [{'name': "Gerardo Lacy Mora"}],
+                'course': course_name,
+                'authors': authors_fm,
                 'keywords': keywords,
                 'learning_objectives': objectives,
                 'activities': activities,

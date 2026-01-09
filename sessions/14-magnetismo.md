@@ -9,7 +9,7 @@ session:
   modality: Presencial
 course: Física para Biotecnología
 authors:
-- name: Gerardo Lacy Mora
+- name: Escuela de Física
 keywords:
 - Magnetismo
 learning_objectives:
@@ -26,6 +26,7 @@ references:
     Flores. https://elibro.net/es/lc/itcr/titulos/124788'
   pages: Secciones 15.1 a 15.8, pág. 267-280
 ---
+
 
 
 :::{note} Objetivos

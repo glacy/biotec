@@ -9,7 +9,7 @@ session:
   modality: Presencial
 course: Física para Biotecnología
 authors:
-- name: Gerardo Lacy Mora
+- name: Escuela de Física
 keywords:
 - Dinámica
 - fluidos
@@ -31,6 +31,7 @@ references:
     España. https://elibro.net/es/lc/itcr/titulos/50165'
   pages: Ejemplos 3.4, 3.5 y 3.6
 ---
+
 
 
 :::{note} Objetivos

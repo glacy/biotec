@@ -1,7 +1,7 @@
 version: 1
 project:
-  title: FI1105 
-  subtitle: I semestre 2026
+  title: FI1105
+  subtitle: I Semestre 2026
   authors:
   - name: Escuela de Física
   copyright: '© 2026 glacy. Contenido distribuido bajo licencia Creative Commons Atribución
@@ -74,7 +74,7 @@ project:
       - file: activities/17-galeria-microscopia.md
 site:
   title: FI1105
-  subtitle: I semestre 2026
+  subtitle: I Semestre 2026
   options:
     logo: assets/site_logo.svg
     logo_dark: assets/site_logo_dark.svg

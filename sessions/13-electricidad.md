@@ -9,7 +9,7 @@ session:
   modality: Presencial
 course: Física para Biotecnología
 authors:
-- name: Gerardo Lacy Mora
+- name: Escuela de Física
 keywords:
 - Electricidad
 learning_objectives:
@@ -30,6 +30,7 @@ references:
     Flores. https://elibro.net/es/lc/itcr/titulos/124788'
   pages: Secciones 14.1 a 14.4, pág. 253-259
 ---
+
 
 
 :::{note} Objetivos

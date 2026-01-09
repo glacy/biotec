@@ -9,7 +9,7 @@ session:
   modality: Presencial
 course: Física para Biotecnología
 authors:
-- name: Gerardo Lacy Mora
+- name: Escuela de Física
 keywords:
 - Fluidos
 - 'reales:'
@@ -34,6 +34,7 @@ references:
     España. https://elibro.net/es/lc/itcr/titulos/50165'
   pages: Sección 3.8, pág. 115-126
 ---
+
 
 
 :::{note} Objetivos

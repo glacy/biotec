@@ -9,7 +9,7 @@ session:
   modality: Presencial
 course: Física para Biotecnología
 authors:
-- name: Gerardo Lacy Mora
+- name: Escuela de Física
 keywords:
 - Cinemática
 - lineal
@@ -28,6 +28,7 @@ references:
     Hall.'
   pages: Secciones 2.1 a 2.4, pág. 32-49
 ---
+
 
 
 :::{note} Objetivos

@@ -9,7 +9,7 @@ session:
   modality: Presencial
 course: Física para Biotecnología
 authors:
-- name: Gerardo Lacy Mora
+- name: Escuela de Física
 keywords:
 - Microscopios
 learning_objectives:
@@ -27,6 +27,7 @@ references:
     Flores. https://elibro.net/es/lc/itcr/titulos/124788'
   pages: Secciones 19.1 a 19.7, pág. 339-347
 ---
+
 
 
 :::{note} Objetivos

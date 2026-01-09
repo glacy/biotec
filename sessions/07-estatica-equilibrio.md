@@ -9,7 +9,7 @@ session:
   modality: Presencial
 course: Física para Biotecnología
 authors:
-- name: Gerardo Lacy Mora
+- name: Escuela de Física
 keywords:
 - 'Estática:'
 - equilibrio
@@ -29,6 +29,7 @@ references:
     Hall.'
   pages: Secciones 8.1 a 8.2, pág. 256-269
 ---
+
 
 
 :::{note} Objetivos

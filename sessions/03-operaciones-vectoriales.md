@@ -9,7 +9,7 @@ session:
   modality: Presencial
 course: Física para Biotecnología
 authors:
-- name: Gerardo Lacy Mora
+- name: Escuela de Física
 keywords:
 - Operaciones
 - vectoriales
@@ -26,6 +26,7 @@ references:
     Hall.'
   pages: Sección 3.2, pág. 73-80
 ---
+
 
 
 :::{note} Objetivos

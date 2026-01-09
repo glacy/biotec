@@ -9,7 +9,7 @@ session:
   modality: Presencial
 course: Física para Biotecnología
 authors:
-- name: Gerardo Lacy Mora
+- name: Escuela de Física
 keywords:
 - Dinámica
 - Leyes
@@ -29,6 +29,7 @@ references:
     Hall.'
   pages: Secciones 4.1 a 4.6, pág. 103-127
 ---
+
 
 
 :::{note} Objetivos

@@ -1,4 +1,11 @@
 
+"""
+Unit tests for the generate_sessions.py script.
+
+Tests the filename generation logic, standard file creation workflow, duplicate handling (counter appending),
+and week filtering functionality using mocking to avoid actual file system IO.
+"""
+
 import unittest
 from unittest.mock import patch, mock_open, MagicMock
 import os
@@ -6,7 +13,7 @@ import sys
 import json
 
 # Adjust path to import the script under test
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../scripts')))
 
 import generate_sessions
 
@@ -14,8 +21,8 @@ class TestGenerateSessions(unittest.TestCase):
 
     def test_generate_filename(self):
         """Test filename generation with various inputs."""
-        self.assertEqual(generate_sessions.generate_filename(1, "Basic Title"), "01-basic-title.md")
-        self.assertEqual(generate_sessions.generate_filename(2, "Title: With Special Chars!"), "02-title-with-special-chars.md")
+        self.assertEqual(generate_sessions.generate_filename(1, "Sesión de Introducción"), "01-sesion-de-introduccion.md")
+        self.assertEqual(generate_sessions.generate_filename(2, "Ángulos y Energías"), "02-angulos-y-energias.md")
         self.assertEqual(generate_sessions.generate_filename(10, "  Trim Spaces  "), "10-trim-spaces.md")
         self.assertEqual(generate_sessions.generate_filename(5, "Title with   Multiple Spaces"), "05-title-with-multiple-spaces.md")
 

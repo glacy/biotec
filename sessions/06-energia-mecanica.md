@@ -9,7 +9,7 @@ session:
   modality: Presencial
 course: Física para Biotecnología
 authors:
-- name: Gerardo Lacy Mora
+- name: Escuela de Física
 keywords:
 - Energía
 - mecánica
@@ -29,6 +29,7 @@ references:
     Hall.'
   pages: Secciones 7.1 a 7.4, pág. 217-231
 ---
+
 
 
 :::{note} Objetivos

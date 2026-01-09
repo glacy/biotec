@@ -9,7 +9,7 @@ session:
   modality: Presencial
 course: Física para Biotecnología
 authors:
-- name: Gerardo Lacy Mora
+- name: Escuela de Física
 keywords:
 - Fundamentos
 - estática
@@ -34,6 +34,7 @@ references:
     España. https://elibro.net/es/lc/itcr/titulos/50165'
   pages: Secciones 3.1 a 3.4 p 89-97
 ---
+
 
 
 :::{note} Objetivos
