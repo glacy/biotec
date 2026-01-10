@@ -17,6 +17,8 @@ env/
 # OS generated files
 .DS_Store
 
+# dev files
 scripts/update_subtitles.py
-syllabus-viewer/
+# syllabus-viewer/
 presentation-react/
+sesiones/
