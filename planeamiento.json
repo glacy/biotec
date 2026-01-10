@@ -13,7 +13,6 @@
     {
       "week": 1,
       "content": [
-        "Unidades y conversión de unidades",
         "unidades del SI",
         "análisis dimensional",
         "conversiones"
@@ -36,12 +35,13 @@
           "text": "[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice Hall.",
           "pages": "Secciones 1.1 a 1.5, pág. 23-25"
         }
-      ]
+      ],
+      "title": "Unidades y conversión de unidades",
+      "subtitle": "Semana 1"
     },
     {
       "week": 2,
       "content": [
-        "Cinemática lineal",
         "escalares",
         "distancia",
         "rapidez",
@@ -68,12 +68,13 @@
           "text": "[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice Hall.",
           "pages": "Secciones 2.1 a 2.4, pág. 32-49"
         }
-      ]
+      ],
+      "title": "Cinemática lineal",
+      "subtitle": "Semana 2"
     },
     {
       "week": 3,
       "content": [
-        "Operaciones vectoriales",
         "componentes vectoriales",
         "suma vectorial",
         "resta vectorial",
@@ -95,12 +96,13 @@
           "text": "[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice Hall.",
           "pages": "Sección 3.2, pág. 73-80"
         }
-      ]
+      ],
+      "title": "Operaciones vectoriales",
+      "subtitle": "Semana 3"
     },
     {
       "week": 4,
       "content": [
-        "Dinámica y Leyes de Newton",
         "Fuerzas: tensión, peso, normal, fricción",
         "Leyes de Newton",
         "Diagrama de Cuerpo Libre"
@@ -123,12 +125,13 @@
           "text": "[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice Hall.",
           "pages": "Secciones 4.1 a 4.6, pág. 103-127"
         }
-      ]
+      ],
+      "title": "Dinámica y Leyes de Newton",
+      "subtitle": "Semana 4"
     },
     {
       "week": 5,
       "content": [
-        "Cantidades angulares, movimiento circular uniforme y aceleración centrípeta",
         "Posición y desplazamiento angular",
         "Rapidez, velocidad y aceleración angular",
         "Movimiento circular uniforme",
@@ -152,12 +155,13 @@
           "text": "[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice Hall.",
           "pages": "Secciones 5.1 a 5.6, pág. 140-167"
         }
-      ]
+      ],
+      "title": "Cantidades angulares, movimiento circular uniforme y aceleración centrípeta",
+      "subtitle": "Semana 5"
     },
     {
       "week": 6,
       "content": [
-        "Energía mecánica",
         "trabajo",
         "energía cinética",
         "energía potencial",
@@ -183,12 +187,13 @@
           "text": "[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice Hall.",
           "pages": "Secciones 7.1 a 7.4, pág. 217-231"
         }
-      ]
+      ],
+      "title": "Energía mecánica",
+      "subtitle": "Semana 6"
     },
     {
       "week": 7,
       "content": [
-        "Estática: equilibrio",
         "Cuerpo rígido",
         "Momento de fuerza",
         "Equilibrio y estabilidad con aplicación en sistemas biológicos"
@@ -210,12 +215,13 @@
           "text": "[1] Wilson, J., Buffa, A., & Lou, B. (2007). Física (6.ª ed.). Pearson-Prentice Hall.",
           "pages": "Secciones 8.1 a 8.2, pág. 256-269"
         }
-      ]
+      ],
+      "title": "Estática: equilibrio",
+      "subtitle": "Semana 7"
     },
     {
       "week": 8,
       "content": [
-        "Fundamentos de estática de fluidos",
         "Densidad",
         "Presión y profundidad",
         "Principio de Arquímedes (flotación)",
@@ -245,12 +251,13 @@
           "text": "[2] Jou Mirabent, D. (2009). Física para ciencias de la vida (2.ª ed.). McGraw-Hill España. https://elibro.net/es/lc/itcr/titulos/50165",
           "pages": "Secciones 3.1 a 3.4 p 89-97"
         }
-      ]
+      ],
+      "title": "Fundamentos de estática de fluidos",
+      "subtitle": "Semana 8"
     },
     {
       "week": 9,
       "content": [
-        "Dinámica de fluidos ideales",
         "Fluido ideal",
         "Ecuación de continuidad",
         "Ecuación de Bernoulli"
@@ -274,12 +281,13 @@
           "text": "[2] Jou Mirabent, D. (2009). Física para ciencias de la vida (2.ª ed.). McGraw-Hill España. https://elibro.net/es/lc/itcr/titulos/50165",
           "pages": "Ejemplos 3.4, 3.5 y 3.6"
         }
-      ]
+      ],
+      "title": "Dinámica de fluidos ideales",
+      "subtitle": "Semana 9"
     },
     {
       "week": 10,
       "content": [
-        "Fluidos reales: viscosidad, turbulencia y aplicaciones",
         "viscosidad",
         "viscosidad aparente",
         "comportamiento reológico",
@@ -302,12 +310,13 @@
           "text": "[3] Ortuño, M. (2019). Física para las ciencias de la vida. Editorial Tébar Flores. https://elibro.net/es/lc/itcr/titulos/124788",
           "pages": "Secciones 8.3 a 8.4, pág. 123-128"
         }
-      ]
+      ],
+      "title": "Fluidos reales: viscosidad, turbulencia y aplicaciones",
+      "subtitle": "Semana 10"
     },
     {
       "week": 11,
       "content": [
-        "Fluidos reales: viscosidad, turbulencia y aplicaciones",
         "Flujo laminar y turbulencia",
         "Número de Reynolds",
         "Fuerza de arrastre",
@@ -333,12 +342,13 @@
           "text": "[2] Jou Mirabent, D. (2009). Física para ciencias de la vida (2.ª ed.). McGraw-Hill España. https://elibro.net/es/lc/itcr/titulos/50165",
           "pages": "Sección 3.8, pág. 115-126"
         }
-      ]
+      ],
+      "title": "Fluidos reales: viscosidad, turbulencia y aplicaciones",
+      "subtitle": "Semana 11"
     },
     {
       "week": 12,
       "content": [
-        "Electricidad",
         "Interacción entre cargas, ley de Coulomb, potencial",
         "Dipolo eléctrico",
         "Condensadores",
@@ -365,12 +375,13 @@
           "text": "[3] Ortuño, M. (2019). Física para las ciencias de la vida. Editorial Tébar Flores. https://elibro.net/es/lc/itcr/titulos/124788",
           "pages": "Secciones 13.1 a 13.6, pág. 233-246"
         }
-      ]
+      ],
+      "title": "Electricidad",
+      "subtitle": "Semana 12"
     },
     {
       "week": 13,
       "content": [
-        "Electricidad",
         "Circuitos complicados (ejemplo biológico)",
         "Descarga de condensador",
         "Circuito eléctrico equivalente a la membrana",
@@ -397,12 +408,13 @@
           "text": "[3] Ortuño, M. (2019). Física para las ciencias de la vida. Editorial Tébar Flores. https://elibro.net/es/lc/itcr/titulos/124788",
           "pages": "Secciones 14.1 a 14.4, pág. 253-259"
         }
-      ]
+      ],
+      "title": "Electricidad",
+      "subtitle": "Semana 13"
     },
     {
       "week": 14,
       "content": [
-        "Magnetismo",
         "Fuerza magnética sobre una partícula",
         "Fuerza magnética sobre una corriente.",
         "Campo producido por una corriente",
@@ -426,12 +438,13 @@
           "text": "[3] Ortuño, M. (2019). Física para las ciencias de la vida. Editorial Tébar Flores. https://elibro.net/es/lc/itcr/titulos/124788",
           "pages": "Secciones 15.1 a 15.8, pág. 267-280"
         }
-      ]
+      ],
+      "title": "Magnetismo",
+      "subtitle": "Semana 14"
     },
     {
       "week": 15,
       "content": [
-        "Óptica y fenómenos luminosos",
         "Naturaleza de la luz",
         "Reflexión y refracción",
         "Refracción total interna",
@@ -456,12 +469,13 @@
           "text": "[3] Ortuño, M. (2019). Física para las ciencias de la vida. Editorial Tébar Flores. https://elibro.net/es/lc/itcr/titulos/124788",
           "pages": "Secciones 17.1 a 17.3, pág. 303-307"
         }
-      ]
+      ],
+      "title": "Óptica y fenómenos luminosos",
+      "subtitle": "Semana 15"
     },
     {
       "week": 16,
       "content": [
-        "Microscopios",
         "Lentes",
         "Aumento angular",
         "Microscopio óptico",
@@ -488,7 +502,9 @@
           "text": "[3] Ortuño, M. (2019). Física para las ciencias de la vida. Editorial Tébar Flores. https://elibro.net/es/lc/itcr/titulos/124788",
           "pages": "Secciones 19.1 a 19.7, pág. 339-347"
         }
-      ]
+      ],
+      "title": "Microscopios",
+      "subtitle": "Semana 16"
     }
   ]
 }

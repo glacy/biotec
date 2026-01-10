@@ -147,6 +147,18 @@ myst start
 ```
 El sitio estará disponible en `http://localhost:3000`.
 
+### 4. Configuración del Visor de Syllabus (Submódulo)
+
+El `syllabus-viewer` es un desarrollo independiente del "constructor del curso" (este repositorio). Funciona como una aplicación React autónoma que consume los datos generados, pero tiene su propio ciclo de vida y repositorio: [https://github.com/glacy/syllabus-viewer](https://github.com/glacy/syllabus-viewer).
+
+Si deseas desarrollar o construir la aplicación React del `syllabus-viewer`, debes instalar sus dependencias independientemente:
+
+```bash
+cd syllabus-viewer
+npm install
+```
+Esto es necesario para resolver tipos de TypeScript (como `vite/client`) y dependencias de construcción.
+
 
 ## Asistencia de IA
 

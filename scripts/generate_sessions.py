@@ -102,9 +102,8 @@ def main():
             references_list = entry.get('references', [])
 
             # Process Title (First item of content or generic)
-            title = content_list[0] if content_list else f"Sesión {int(week_num)}"
-            # Remove numbering from title if present (though JSON usually doesn't have it)
-            title = re.sub(r'^\d+\.\s*', '', title)
+            title = entry.get('title', f"Sesión {int(week_num)}")
+            subtitle = entry.get('subtitle', f"Semana {int(week_num)}")
 
             # Process Keywords (simple extraction from title)
             keywords = [word for word in title.split() if len(word) > 4]
@@ -112,8 +111,8 @@ def main():
             # Construct Frontmatter
             frontmatter = {
                 'title': title,
-                'subtitle': f"Semana {int(week_num)}",
-                'subject': f"Semana {int(week_num)}",
+                'subtitle': subtitle,
+                'subject': subtitle,
                 'session': {
                     'number': int(week_num),
                     'duration': "TBD",

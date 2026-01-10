@@ -1,6 +1,6 @@
 ---
 title: Unidades y conversión de unidades
-subtitle: xxxxxxx
+subtitle: Semana 1
 subject: Semana 1
 session:
   number: 1
@@ -31,7 +31,7 @@ references:
   pages: Secciones 1.1 a 1.5, pág. 23-25
 ---
 
-![](https://img.shields.io/badge/-Unidades_y_conversión_de_unidades-lightgrey) ![](https://img.shields.io/badge/-unidades_del_SI-lightgrey) ![](https://img.shields.io/badge/-análisis_dimensional-lightgrey) ![](https://img.shields.io/badge/-conversiones-lightgrey)
+![](https://img.shields.io/badge/-unidades_del_SI-lightgrey) ![](https://img.shields.io/badge/-análisis_dimensional-lightgrey) ![](https://img.shields.io/badge/-conversiones-lightgrey)
 
 :::{note} Objetivos
 Al completar esta lección, serás capaz de:
