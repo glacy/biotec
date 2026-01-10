@@ -81,6 +81,9 @@ Para garantizar un entorno de desarrollo consistente, este proyecto utiliza Anac
 ### 1. Configuración del entorno
 ```bash
 # Crear el entorno desde el archivo de configuración
+# Nota: Si clonas el repositorio, usa --recursive para incluir los submódulos
+# git clone --recursive https://github.com/glacy/biotec.git
+
 conda env create -f environment.yml
 
 # Activar el entorno

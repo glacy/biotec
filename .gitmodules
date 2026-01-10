@@ -1,0 +1,3 @@
+[submodule "syllabus-viewer"]
+	path = syllabus-viewer
+	url = https://github.com/glacy/syllabus-viewer.git
