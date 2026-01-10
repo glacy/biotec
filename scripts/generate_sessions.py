@@ -4,6 +4,9 @@ Script to generate markdown session files from planeamiento.json.
 
 This script reads 'planeamiento.json', extracting content for each week,
 and generates structured Markdown files with YAML frontmatter in the 'sessions/' directory.
+Features:
+- Generates contents as visual badges (using shields.io) before objectives.
+- Safely handles existing files: skips by default, use --force to overwrite.
 """
 
 import json
@@ -45,6 +48,7 @@ import argparse
 def main():
     parser = argparse.ArgumentParser(description='Generate markdown session files from planeamiento.json.')
     parser.add_argument('--week', type=int, help='Specific week number to generate (e.g., 1)')
+    parser.add_argument('--force', action='store_true', help='Overwrite existing files')
     args = parser.parse_args()
 
     if not os.path.exists(OUTPUT_DIR):
@@ -130,6 +134,18 @@ def main():
             # Construct Markdown Body
             md_content = f"---\n{yaml_frontmatter}---\n\n"
             
+            # Format Contents as Badges
+            if content_list:
+                # md_content += "## Contenidos\n\n" # Removed header for cleaner look with badges
+                badges = []
+                for item in content_list:
+                     # Escape characters for shields.io: - -> --, _ -> __, space -> _
+                     safe_item = item.replace('-', '--').replace('_', '__').replace(' ', '_')
+                     # Use lightgrey color
+                     badge_url = f"https://img.shields.io/badge/-{safe_item}-lightgrey"
+                     badges.append(f"![]({badge_url})")
+                md_content += " ".join(badges) + "\n\n"
+
             # Add Objectives Block
             if objectives:
                 md_content += ":::{note} Objetivos\n"
@@ -137,12 +153,6 @@ def main():
                 for i, obj in enumerate(objectives, 1):
                     md_content += f"{i}. {obj}\n"
                 md_content += ":::\n\n"
-            
-            if content_list:
-                md_content += "## Contenidos\n\n"
-                for item in content_list:
-                     md_content += f"- {item}\n"
-                md_content += "\n"
             
             if activities:
                 md_content += "## Actividades\n\n"
@@ -171,15 +181,11 @@ def main():
             filename = generate_filename(week_num, title)
             filepath = os.path.join(OUTPUT_DIR, filename)
             
-            # Check for duplicates and append counter
-            if os.path.exists(filepath):
-                base_name, ext = os.path.splitext(filename)
-                counter = 1
-                while os.path.exists(filepath):
-                    filename = f"{base_name}_{counter}{ext}"
-                    filepath = os.path.join(OUTPUT_DIR, filename)
-                    counter += 1
-            
+            if os.path.exists(filepath) and not args.force:
+                print(f"Skipping existing file: {filepath} (use --force to overwrite)")
+                continue
+
+            # Write file
             with open(filepath, 'w', encoding='utf-8') as f:
                 f.write(md_content)
             

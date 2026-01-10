@@ -125,7 +125,7 @@ Se incluyen scripts para verificar la integridad del entorno y el contenido:
   1. Modificar `planeamiento.json`.
   2. Ejecutar `python3 scripts/sync_myst.py` para actualizar metadata.
   3. Ejecutar `python3 scripts/generate_sessions.py` para regenerar contenido.
-  4. Ejecutar `python3 scripts/update_toc.py` para corregir enlaces en el índice.
+     - **Nota**: Este script genera los temas de contenido como badges grises (shields.io). Por seguridad, **omite archivos existentes**. Use el flag `--force` para confirmar la sobrescritura.
   4. Ejecutar `python3 scripts/update_toc.py` para corregir enlaces en el índice.
 
 - **Inyección de Badges en Actividades:**

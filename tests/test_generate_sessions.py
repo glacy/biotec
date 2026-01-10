@@ -34,7 +34,7 @@ class TestGenerateSessions(unittest.TestCase):
     def test_main_standard_generation(self, mock_args, mock_file, mock_json_load, mock_exists, mock_makedirs):
         """Test standard generation flow."""
         # Setup mocks
-        mock_args.return_value = argparse.Namespace(week=None)
+        mock_args.return_value = argparse.Namespace(week=None, force=False)
         mock_exists.side_effect = lambda x: False # Output dir doesn't exist initially, file doesn't exist
         mock_json_load.return_value = [
             {
@@ -64,44 +64,76 @@ class TestGenerateSessions(unittest.TestCase):
         # Verify content was written
         handle = mock_file()
         handle.write.assert_called()
+        
+        # Get the written content to inspect
+        # write might be called multiple times, we want to check the body
+        written_content = "".join(call.args[0] for call in handle.write.call_args_list)
+        
+        # Verification 1: Check for badge format
+        # Contenido 1 -> https://img.shields.io/badge/-Contenido_1-lightgrey
+        expected_badge = "https://img.shields.io/badge/-Contenido_1-lightgrey"
+        self.assertIn(expected_badge, written_content)
+        
+        # Verification 2: Check for order (Badges before Objectives)
+        badge_pos = written_content.find(expected_badge)
+        objectives_pos = written_content.find(":::{note} Objetivos")
+        
+        self.assertNotEqual(badge_pos, -1, "Badge not found")
+        self.assertNotEqual(objectives_pos, -1, "Objectives block not found")
+        self.assertLess(badge_pos, objectives_pos, "Content badges should appear before Objectives")
 
     @patch('generate_sessions.os.makedirs')
     @patch('generate_sessions.os.path.exists')
     @patch('generate_sessions.json.load')
     @patch('builtins.open', new_callable=mock_open)
     @patch('argparse.ArgumentParser.parse_args')
-    def test_main_duplicate_handling(self, mock_args, mock_file, mock_json_load, mock_exists, mock_makedirs):
-        """Test that a counter is appended if file exists."""
-        mock_args.return_value = argparse.Namespace(week=None)
+    def test_main_skip_existing_without_force(self, mock_args, mock_file, mock_json_load, mock_exists, mock_makedirs):
+        """Test that the script skips existing files if --force is not provided."""
+        mock_args.return_value = argparse.Namespace(week=None, force=False)
         
         mock_json_load.return_value = [
             {"week": 1, "content": ["Topic"]}
         ]
 
-        # Scenario: Output dir exists. Target file 'sessions/01-topic.md' exists.
-        # 'sessions' dir exists -> True
-        # 'sessions/01-topic.md' exists -> True (trigger while loop)
-        # 'sessions/01-topic_1.md' exists -> False (break loop)
-        
-        # We need to be careful with mock_exists side_effect because it's called for dir and files
-        # Sequence of calls roughly:
-        # 1. exists(OUTPUT_DIR)
-        # 2. exists(filepath) -> True
-        # 3. exists(filepath_1) -> False
-        
-        # Let's mock based on input args
         def exists_side_effect(path):
             if path == 'sessions': return True
             if path.endswith('01-topic.md'): return True
-            if path.endswith('01-topic_1.md'): return False
             return False
 
         mock_exists.side_effect = exists_side_effect
 
         generate_sessions.main()
 
-        expected_new_path = os.path.join('sessions', '01-topic_1.md')
-        mock_file.assert_any_call(expected_new_path, 'w', encoding='utf-8')
+        expected_path = os.path.join('sessions', '01-topic.md')
+        # Should NOT write
+        with self.assertRaises(AssertionError):
+             mock_file.assert_any_call(expected_path, 'w', encoding='utf-8')
+
+    @patch('generate_sessions.os.makedirs')
+    @patch('generate_sessions.os.path.exists')
+    @patch('generate_sessions.json.load')
+    @patch('builtins.open', new_callable=mock_open)
+    @patch('argparse.ArgumentParser.parse_args')
+    def test_main_force_overwrite(self, mock_args, mock_file, mock_json_load, mock_exists, mock_makedirs):
+        """Test that the script overwrites existing files if --force IS provided."""
+        mock_args.return_value = argparse.Namespace(week=None, force=True)
+        
+        mock_json_load.return_value = [
+            {"week": 1, "content": ["Topic"]}
+        ]
+
+        def exists_side_effect(path):
+            if path == 'sessions': return True
+            if path.endswith('01-topic.md'): return True
+            return False
+
+        mock_exists.side_effect = exists_side_effect
+
+        generate_sessions.main()
+
+        expected_path = os.path.join('sessions', '01-topic.md')
+        # Should write
+        mock_file.assert_any_call(expected_path, 'w', encoding='utf-8')
 
 
     @patch('generate_sessions.os.makedirs')
@@ -111,7 +143,7 @@ class TestGenerateSessions(unittest.TestCase):
     @patch('argparse.ArgumentParser.parse_args')
     def test_main_filter_week(self, mock_args, mock_file, mock_json_load, mock_exists, mock_makedirs):
         """Test generating a specific week."""
-        mock_args.return_value = argparse.Namespace(week=2)
+        mock_args.return_value = argparse.Namespace(week=2, force=False)
         mock_exists.return_value = False
         
         mock_json_load.return_value = [
