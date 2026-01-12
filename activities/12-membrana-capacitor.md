@@ -58,17 +58,17 @@ $$ E = \frac{\Delta V}{d} $$
 
 ### Problemas
 
-#### 1. Capacitancia Específica
-Calcule la **capacitancia por unidad de área** ($C_{específica} = C/A$) de una membrana neuronal típica.
+#### 1. Capacitancia específica
+Calcule la **capacitancia por unidad de área** ($C_\text{específica} = C/A$) de una membrana neuronal típica.
 *   Exprese su resultado en $\mu \text{F/cm}^2$.
 *   *Nota*: El valor experimental real suele rondar $1.0 \mu \text{F/cm}^2$. ¿Qué tan cerca estuvo su cálculo teórico?
 
-#### 2. La Célula Esférica
+#### 2. La célula esférica
 Considere una célula esférica con un diámetro de $20 \mu \text{m}$.
 1.  Calcule su área superficial ($A = 4\pi r^2$).
-2.  Calcule la **Capacitancia Total** de esta célula.
+2.  Calcule la **capacitancia total** de esta célula.
 
-#### 3. El Campo Eléctrico Gigante
+#### 3. El campo eléctrico gigante
 El potencial de reposo de una neurona es aproximadamente $\Delta V = -70 \text{ mV}$.
 1.  Calcule la magnitud del **Campo Eléctrico ($E$)** dentro de la membrana. Exprese el resultado en **Voltios/metro (V/m)**.
 2.  Compare este valor con el campo eléctrico necesario para crear una chispa en el aire ($\approx 3 \times 10^6 \text{ V/m}$). ¿Es el campo de la membrana fuerte o débil?
@@ -84,6 +84,6 @@ Hoja de cálculos con los resultados de las tres secciones y una breve conclusi�
 
 | Criterio | 5 Puntos | 3 Puntos | 1 Punto |
 | :--- | :--- | :--- | :--- |
-| **Capacitancia Específica** | Cálculo correcto usando constante dieléctrica y espesor ($C/A$). Unidades correctas. | Error en unidades (F vs $\mu$F) o en el uso de $\epsilon_0$. | Cálculo incorrecto. |
-| **Capacitancia Celular** | Aplicación correcta del área superficial de la esfera. Resultado coherente. | Error geométrico en el cálculo del área. | No calcula la total. |
-| **Campo Eléctrico** | Determina la magnitud del campo gigante ($V/d$) y lo contextualiza. | Calcula el campo pero erra en órdenes de magnitud. | No calcula el campo. |
+| **Capacitancia específica** | Cálculo correcto usando constante dieléctrica y espesor ($C/A$). Unidades correctas. | Error en unidades (F vs $\mu$F) o en el uso de $\epsilon_0$. | Cálculo incorrecto. |
+| **Capacitancia celular** | Aplicación correcta del área superficial de la esfera. Resultado coherente. | Error geométrico en el cálculo del área. | No calcula la total. |
+| **Campo eléctrico** | Determina la magnitud del campo gigante ($V/d$) y lo contextualiza. | Calcula el campo pero erra en órdenes de magnitud. | No calcula el campo. | 

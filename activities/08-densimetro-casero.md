@@ -50,15 +50,15 @@ En biotecnología industrial, conocer la densidad de un caldos de cultivo es vit
 ### Marco Teórico: ¿Por qué flota?
 
 Un objeto flota cuando la fuerza de empuje ($E$) iguala a su peso ($P$).
-Según Arquímedes: $E = \rho_{liquido} \cdot g \cdot V_{sumergido}$.
+Según Arquímedes: $E = \rho_\text{liquido} \cdot g \cdot V_\text{sumergido}$.
 
 En equilibrio:
-$$ m_{objeto} \cdot g = \rho_{liquido} \cdot g \cdot V_{sumergido} $$
+$$ m_\text{objeto} \cdot g = \rho_\text{liquido} \cdot g \cdot V_\text{sumergido} $$
 
 Despejando el volumen sumergido:
-$$ V_{sumergido} = \frac{m_{objeto}}{\rho_{liquido}} $$
+$$ V_\text{sumergido} = \frac{m_\text{objeto}}{\rho_\text{liquido}} $$
 
-**Conclusión clave**: Si la densidad del líquido ($\rho_{liquido}$) **aumenta**, el volumen necesario para soportar el peso **disminuye**. El densímetro flota **más alto** en líquidos más densos.
+**Conclusión clave**: Si la densidad del líquido ($\rho_\text{liquido}$) **aumenta**, el volumen necesario para soportar el peso **disminuye**. El densímetro flota **más alto** en líquidos más densos.
 
 ### Instrucciones
 

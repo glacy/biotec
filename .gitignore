@@ -20,5 +20,5 @@ env/
 # dev files
 scripts/update_subtitles.py
 presentation-react/
-sessions_BKP/
+# sessions_BKP/
 sesiones/
