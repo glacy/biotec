@@ -1,132 +1,41 @@
 version: 1
 project:
-  title: FI1105
-  subtitle: I Semestre 2026
+  id: myst-course-starter
+  title: Semantic Design of Academic Documents
+  subtitle: Fall 2024 (Example)
   authors:
-  - name: Escuela de Física
-  copyright: '© 2026 glacy. Contenido distribuido bajo licencia Creative Commons Atribución
-    4.0 Internacional (CC BY 4.0).'
-  github: glacy/biotec
-  bibliography:
-  - references.bib
+    - name: Syllabus Viewer
+  github: https://github.com/glacy/myst-course-starter
   toc:
     - file: programa.md
-    - title: Semana 1
+    - title: Week 1
       children:
-      - file: sessions/01-unidades-y-conversion-de-unidades.md
-      - file: activities/01-taller-fisica-en-la-cocina.md
+      - file: sessions/01-introduction-to-semantic-writing.md
+      - file: activities/01-deconstruct-a-pdf-paper-into-its.md
         hidden: true
-      - file: evaluations/01-formativa-conversion.md
-        hidden: true
-    - title: Semana 2
+    - title: Week 2
       children:
-      - file: sessions/02-cinematica-lineal.md
-      - file: activities/02-rastreo-estroboscopico.md
+      - file: sessions/02-markdown-structured-text.md
+      - file: activities/02-lab-convert-a-legacy-word-document.md
         hidden: true
-      - file: evaluations/02-sumativa-quiz.md
-        hidden: true
-    - title: Semana 3
+    - title: Week 3
       children:
-      - file: sessions/03-operaciones-vectoriales.md
-      - file: activities/03-caza-del-tesoro-vectorial.md
+      - file: sessions/03-metadata-frontmatter.md
+      - file: activities/03-workshop-creating-a-unified-metadata-schema.md
         hidden: true
-      - file: evaluations/03-formativa-vectores.md
-        hidden: true
-    - title: Semana 4
+    - title: Week 4
       children:
-      - file: sessions/04-dinamica-y-leyes-de-newton.md
-      - file: activities/04-diseno-centrifugas.md
-        hidden: true
-      - file: evaluations/04-formativa-dcl.md
-        hidden: true
-    - title: Semana 5
-      children:
-      - file: sessions/05-cantidades-angulares-movimiento-circular-uniforme-y-aceleracion-centripeta.md
-      - file: activities/05-desafio-ultracentrifuga.md
-        hidden: true
-      - file: evaluations/05-sumativa-informe-centrifugacion.md
-        hidden: true
-    - title: Semana 6
-      children:
-      - file: sessions/06-energia-mecanica.md
-      - file: activities/06-molecu-olimpiadas.md
-        hidden: true
-      - file: evaluations/06-sumativa-problemario-energia.md
-        hidden: true
-    - title: Semana 7
-      children:
-      - file: sessions/07-estatica-equilibrio.md
-      - file: activities/07-estabilidad-proteinas.md
-        hidden: true
-      - file: evaluations/07-formativa-caso-ergonomia.md
-        hidden: true
-    - title: Semana 8
-      children:
-      - file: sessions/08-fundamentos-de-estatica-de-fluidos.md
-      - file: activities/08-densimetro-casero.md
-        hidden: true
-      - file: evaluations/08-formativa-densidad.md
-        hidden: true
-    - title: Semana 9
-      children:
-      - file: sessions/09-dinamica-de-fluidos-ideales.md
-      - file: activities/09-diseno-biorreactor.md
-        hidden: true
-      - file: evaluations/09-sumativa-proyecto-biorreactor.md
-        hidden: true
-    - title: Semana 10
-      children:
-      - file: sessions/10-fluidos-reales-viscosidad-turbulencia-y-aplicaciones.md
-      - file: activities/10-debate-fluidos-no-newtonianos.md
-        hidden: true
-      - file: evaluations/10-sumativa-reporte-viscosidad.md
-        hidden: true
-    - title: Semana 11
-      children:
-      - file: sessions/11-fluidos-reales-viscosidad-turbulencia-y-aplicaciones.md
-      - file: activities/11-microfluidica-papel.md
-        hidden: true
-      - file: evaluations/11-formativa-exposicion-reynolds.md
-        hidden: true
-    - title: Semana 12
-      children:
-      - file: sessions/12-electricidad.md
-      - file: activities/12-membrana-capacitor.md
-        hidden: true
-      - file: evaluations/12-formativa-problemas-electrostatica.md
-        hidden: true
-    - title: Semana 13
-      children:
-      - file: sessions/13-electricidad.md
-      - file: activities/13-hackeando-potencial-accion.md
-        hidden: true
-      - file: evaluations/13-sumativa-taller-circuitos.md
-        hidden: true
-    - title: Semana 14
-      children:
-      - file: sessions/14-magnetismo.md
-      - file: activities/14-fisica-rmn.md
-        hidden: true
-      - file: evaluations/14-formativa-mapa-magnetismo.md
-        hidden: true
-    - title: Semana 15
-      children:
-      - file: sessions/15-optica-y-fenomenos-luminosos.md
-      - file: activities/15-espectroscopia-casera.md
-        hidden: true
-      - file: evaluations/15-sumativa-cuestionario-espectroscopia.md
-        hidden: true
-    - title: Semana 16
-      children:
-      - file: sessions/16-microscopios.md
-      - file: activities/16-galeria-microscopia.md
-        hidden: true
-      - file: evaluations/16-sumativa-proyecto-final.md
+      - file: sessions/04-digital-preservation-export.md
+      - file: activities/04-final-project-build-a-multi-format-export.md
         hidden: true
 site:
-  title: FI1105
-  subtitle: I Semestre 2026
+  template: book-theme
   options:
     logo: assets/site_logo.svg
     logo_dark: assets/site_logo_dark.svg
-  template: book-theme
+  title: Semantic Design of Academic Documents
+  subtitle: Fall 2024 (Example)
+  actions:
+    - title: GitHub
+      url: https://github.com/glacy/myst-course-starter
+      icon: github

@@ -1,4 +1,4 @@
-name: biotec-fisica
+name: myst-course-starter
 channels:
   - conda-forge
 dependencies:
@@ -6,7 +6,7 @@ dependencies:
   - pandoc
   - nodejs>=20
   - git
-  - jupyterlab
+  # - jupyterlab
   # - quarto
   - pip
   - pyyaml

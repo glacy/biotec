@@ -4,9 +4,38 @@ Script to generate markdown session files from planeamiento.json.
 
 This script reads 'planeamiento.json', extracting content for each week,
 and generates structured Markdown files with YAML frontmatter in the 'sessions/' directory.
+
 Features:
 - Generates contents as visual badges (using shields.io) before objectives.
 - Safely handles existing files: skips by default, use --force to overwrite.
+- Multilingual support: generates output in Spanish (es), English (en), or French (fr).
+
+Multilingual Output:
+The script supports generating session files in multiple languages using the --lang argument.
+When a language is selected, the following elements are translated:
+- Section headers (Objectives, Activities, Evaluation, References)
+- Default titles and subtitles (when not provided in JSON)
+- Modality labels (Presencial/In-person/Présentiel)
+- Instructional text in objectives block
+
+Note: The content from planeamiento.json (titles, objectives, activities, etc.) is used as-is.
+Only the script-generated labels and default values are translated.
+
+Usage:
+    python scripts/generate_sessions.py [--lang {es|en|fr}] [--week N] [--force]
+    
+Examples:
+    # Generate all sessions in Spanish (default)
+    python scripts/generate_sessions.py
+    
+    # Generate all sessions in English
+    python scripts/generate_sessions.py --lang en
+    
+    # Generate only week 1 in French
+    python scripts/generate_sessions.py --lang fr --week 1
+    
+    # Overwrite existing files
+    python scripts/generate_sessions.py --lang en --force
 """
 
 import json
@@ -17,6 +46,45 @@ import re
 # Configuration
 JSON_FILE = 'planeamiento.json'
 OUTPUT_DIR = 'sessions'
+
+# Translations dictionary
+# Maps language codes (es, en, fr) to translated strings for:
+# - Section headers (objectives, activities, evaluation, references)
+# - Default titles/subtitles when not provided in JSON
+# - Modality labels
+# - Instructional text in objectives block
+TRANSLATIONS = {
+    'es': {
+        'session': 'Sesión',
+        'week': 'Semana',
+        'modality': 'Presencial',
+        'objectives': 'Objetivos',
+        'objectives_intro': 'Al completar esta lección, serás capaz de:',
+        'activities': 'Actividades',
+        'evaluation': 'Evaluación',
+        'references': 'Referencias'
+    },
+    'en': {
+        'session': 'Session',
+        'week': 'Week',
+        'modality': 'In-person',
+        'objectives': 'Objectives',
+        'objectives_intro': 'Upon completing this lesson, you will be able to:',
+        'activities': 'Activities',
+        'evaluation': 'Evaluation',
+        'references': 'References'
+    },
+    'fr': {
+        'session': 'Séance',
+        'week': 'Semaine',
+        'modality': 'Présentiel',
+        'objectives': 'Objectifs',
+        'objectives_intro': 'En complétant cette leçon, vous serez capable de :',
+        'activities': 'Activités',
+        'evaluation': 'Évaluation',
+        'references': 'Références'
+    }
+}
 
 import unicodedata
 
@@ -46,10 +114,40 @@ import argparse
 # ... existing constants and functions ...
 
 def main():
-    parser = argparse.ArgumentParser(description='Generate markdown session files from planeamiento.json.')
+    """
+    Main function to generate session markdown files from planeamiento.json.
+    
+    Supports multilingual output via --lang argument. Translations are applied to:
+    - Section headers, default values, and instructional text.
+    - Content from JSON is used as-is (not translated).
+    """
+    parser = argparse.ArgumentParser(
+        description='Generate markdown session files from planeamiento.json.',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  Generate all sessions in Spanish (default):
+    python scripts/generate_sessions.py
+  
+  Generate all sessions in English:
+    python scripts/generate_sessions.py --lang en
+  
+  Generate only week 1 in French:
+    python scripts/generate_sessions.py --lang fr --week 1
+  
+  Overwrite existing files:
+    python scripts/generate_sessions.py --lang en --force
+        """
+    )
     parser.add_argument('--week', type=int, help='Specific week number to generate (e.g., 1)')
     parser.add_argument('--force', action='store_true', help='Overwrite existing files')
+    parser.add_argument('--lang', type=str, default='es', choices=['es', 'en', 'fr'],
+                       help='Output language: es (Spanish), en (English), or fr (French). Default: es')
     args = parser.parse_args()
+    
+    # Get translations for selected language
+    lang = args.lang
+    t = TRANSLATIONS[lang]
 
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
@@ -79,13 +177,13 @@ def main():
             return
 
     # Defaults from metadata or fallback
-    course_name = metadata.get('title', "Física para Biotecnología")
-    authors_list = metadata.get('authors', ["Gerardo Lacy Mora"])
+    course_name = metadata.get('title', "your course name")
+    authors_list = metadata.get('authors', ["your name"])
     # Ensure authors is a list of dicts for the frontmatter format
     if isinstance(authors_list, list) and authors_list and isinstance(authors_list[0], str):
         authors_fm = [{'name': a} for a in authors_list]
     else:
-        authors_fm = [{'name': "Gerardo Lacy Mora"}]
+        authors_fm = [{'name': "your name"}]
 
 
     for entry in data:
@@ -102,8 +200,8 @@ def main():
             references_list = entry.get('references', [])
 
             # Process Title (First item of content or generic)
-            title = entry.get('title', f"Sesión {int(week_num)}")
-            subtitle = entry.get('subtitle', f"Semana {int(week_num)}")
+            title = entry.get('title', f"{t['session']} {int(week_num)}")
+            subtitle = entry.get('subtitle', f"{t['week']} {int(week_num)}")
 
             # Process Keywords (simple extraction from title)
             keywords = [word for word in title.split() if len(word) > 4]
@@ -112,14 +210,12 @@ def main():
             frontmatter = {
                 'title': title,
                 'subtitle': subtitle,
-                'subject': subtitle,
+                'subject': course_name,
                 'session': {
                     'number': int(week_num),
                     'duration': "TBD",
-                    'modality': "Presencial"
+                    'modality': t['modality']
                 },
-                'course': course_name,
-                'authors': authors_fm,
                 'keywords': keywords,
                 'learning_objectives': objectives,
                 'activities': activities,
@@ -139,7 +235,7 @@ def main():
                 badges = []
                 for item in content_list:
                      # Escape characters for shields.io: - -> --, _ -> __, space -> _
-                     safe_item = item.replace('-', '--').replace('_', '__').replace(' ', '_')
+                     safe_item = item.replace('-', '--').replace('_', '__').replace(' ', '_').replace('?', '%3F')
                      # Use lightgrey color
                      badge_url = f"https://img.shields.io/badge/-{safe_item}-lightgrey"
                      badges.append(f"![]({badge_url})")
@@ -147,26 +243,53 @@ def main():
 
             # Add Objectives Block
             if objectives:
-                md_content += ":::{note} Objetivos\n"
-                md_content += "Al completar esta lección, serás capaz de:\n"
+                md_content += f":::{{note}} {t['objectives']}\n"
+                md_content += f"{t['objectives_intro']}\n"
                 for i, obj in enumerate(objectives, 1):
                     md_content += f"{i}. {obj}\n"
                 md_content += ":::\n\n"
             
+
+            # Helper to link activities
             if activities:
-                md_content += "## Actividades\n\n"
-                md_content += f"{activities}\n\n"
+                md_content += f"## {t['activities']}\n\n"
+                
+                # Normalize to list
+                act_list = []
+                if isinstance(activities, str):
+                    act_list.append(activities)
+                elif isinstance(activities, list):
+                    act_list = activities
+                
+                # Try to import generator from sibling
+                import sys
+                sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+                try:
+                    from generate_activities import generate_filename as gen_act_filename
+                except ImportError:
+                    gen_act_filename = None
+                
+                for act_desc in act_list:
+                    if gen_act_filename:
+                        act_file = gen_act_filename(week_num, act_desc)
+                        # Link to the activity file in activities/ directory
+                        # Use relative path: ../activities/filename
+                        link = f"[{act_desc}](../activities/{act_file})"
+                        md_content += f"- {link}\n"
+                    else:
+                        md_content += f"- {act_desc}\n"
+                md_content += "\n"
             
             if evaluation_list:
-                md_content += "## Evaluación\n\n"
+                md_content += f"## {t['evaluation']}\n\n"
                 for eval_item in evaluation_list:
-                    etype = eval_item.get('type', 'Evaluación')
+                    etype = eval_item.get('type', t['evaluation'])
                     desc = eval_item.get('description', '')
                     md_content += f"- **{etype}**: {desc}\n"
                 md_content += "\n"
             
             if references_list:
-                md_content += "## Referencias\n\n"
+                md_content += f"## {t['references']}\n\n"
                 for ref in references_list:
                     text = ref.get('text', '')
                     pages = ref.get('pages', '')

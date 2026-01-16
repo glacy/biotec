@@ -11,6 +11,12 @@ from unittest.mock import patch, mock_open, MagicMock
 import os
 import sys
 import json
+import argparse
+
+# Mock yaml module before importing generate_sessions
+# This allows tests to run even if yaml is not installed
+sys.modules['yaml'] = MagicMock()
+sys.modules['yaml'].dump = lambda data, **kwargs: "mocked_yaml_output"
 
 # Adjust path to import the script under test
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../scripts')))
@@ -34,11 +40,12 @@ class TestGenerateSessions(unittest.TestCase):
     def test_main_standard_generation(self, mock_args, mock_file, mock_json_load, mock_exists, mock_makedirs):
         """Test standard generation flow."""
         # Setup mocks
-        mock_args.return_value = argparse.Namespace(week=None, force=False)
+        mock_args.return_value = argparse.Namespace(week=None, force=False, lang='es')
         mock_exists.side_effect = lambda x: False # Output dir doesn't exist initially, file doesn't exist
         mock_json_load.return_value = [
             {
                 "week": 1,
+                "title": "Contenido 1",
                 "content": ["Contenido 1"],
                 "objectives": ["Obj 1"],
                 "activities": "Activity 1",
@@ -57,7 +64,7 @@ class TestGenerateSessions(unittest.TestCase):
         # Since we mocked open, we can check calls.
         
         # Verify write call (Session 1)
-        # The exact path depends on how it's constructed in the script, assuming 'sessions/01-contenido-1.md'
+        # The exact path depends on how it's constructed in the script, using the title
         expected_path = os.path.join('sessions', '01-contenido-1.md')
         mock_file.assert_any_call(expected_path, 'w', encoding='utf-8')
         
@@ -89,10 +96,10 @@ class TestGenerateSessions(unittest.TestCase):
     @patch('argparse.ArgumentParser.parse_args')
     def test_main_skip_existing_without_force(self, mock_args, mock_file, mock_json_load, mock_exists, mock_makedirs):
         """Test that the script skips existing files if --force is not provided."""
-        mock_args.return_value = argparse.Namespace(week=None, force=False)
+        mock_args.return_value = argparse.Namespace(week=None, force=False, lang='es')
         
         mock_json_load.return_value = [
-            {"week": 1, "content": ["Topic"]}
+            {"week": 1, "title": "Topic", "content": ["Topic"]}
         ]
 
         def exists_side_effect(path):
@@ -116,10 +123,10 @@ class TestGenerateSessions(unittest.TestCase):
     @patch('argparse.ArgumentParser.parse_args')
     def test_main_force_overwrite(self, mock_args, mock_file, mock_json_load, mock_exists, mock_makedirs):
         """Test that the script overwrites existing files if --force IS provided."""
-        mock_args.return_value = argparse.Namespace(week=None, force=True)
+        mock_args.return_value = argparse.Namespace(week=None, force=True, lang='es')
         
         mock_json_load.return_value = [
-            {"week": 1, "content": ["Topic"]}
+            {"week": 1, "title": "Topic", "content": ["Topic"]}
         ]
 
         def exists_side_effect(path):
@@ -143,12 +150,12 @@ class TestGenerateSessions(unittest.TestCase):
     @patch('argparse.ArgumentParser.parse_args')
     def test_main_filter_week(self, mock_args, mock_file, mock_json_load, mock_exists, mock_makedirs):
         """Test generating a specific week."""
-        mock_args.return_value = argparse.Namespace(week=2, force=False)
+        mock_args.return_value = argparse.Namespace(week=2, force=False, lang='es')
         mock_exists.return_value = False
         
         mock_json_load.return_value = [
-            {"week": 1, "content": ["Topic 1"]},
-            {"week": 2, "content": ["Topic 2"]}
+            {"week": 1, "title": "Topic 1", "content": ["Topic 1"]},
+            {"week": 2, "title": "Topic 2", "content": ["Topic 2"]}
         ]
 
         generate_sessions.main()
@@ -162,6 +169,5 @@ class TestGenerateSessions(unittest.TestCase):
         
         mock_file.assert_any_call(path_week_2, 'w', encoding='utf-8')
 
-import argparse # Needed for mocking namespace
 if __name__ == '__main__':
     unittest.main()

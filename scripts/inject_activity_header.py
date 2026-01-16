@@ -3,26 +3,51 @@ import re
 import yaml
 import os
 
-def generate_badges(activity_data):
+import argparse
+
+# Translations configuration
+TRANSLATIONS = {
+    'es': {
+        'type': 'Tipo',
+        'duration': 'Duración',
+        'modality': 'Modalidad',
+        'difficulty': 'Dificultad'
+    },
+    'en': {
+        'type': 'Type',
+        'duration': 'Duration',
+        'modality': 'Modality',
+        'difficulty': 'Difficulty'
+    },
+    'fr': {
+        'type': 'Type',
+        'duration': 'Durée',
+        'modality': 'Modalité',
+        'difficulty': 'Difficulté'
+    }
+}
+
+def generate_badges(activity_data, lang='es'):
     """
     Generates markdown image badges based on activity metadata.
     """
     badges = []
+    t = TRANSLATIONS.get(lang, TRANSLATIONS['es'])
     
     # Mapping keys to colors and labels
     # shielding.io format: label-message-color
     
     if 'type' in activity_data:
         val = str(activity_data['type']).replace('-', '--').replace(' ', '_')
-        badges.append(f"![](https://img.shields.io/badge/Tipo-{val}-orange)")
+        badges.append(f"![](https://img.shields.io/badge/{t['type']}-{val}-orange)")
         
     if 'duration' in activity_data:
         val = str(activity_data['duration']).replace('-', '--').replace(' ', '_')
-        badges.append(f"![](https://img.shields.io/badge/Duración-{val}-yellow)")
+        badges.append(f"![](https://img.shields.io/badge/{t['duration']}-{val}-yellow)")
         
     if 'modality' in activity_data:
         val = str(activity_data['modality']).replace('-', '--').replace(' ', '_')
-        badges.append(f"![](https://img.shields.io/badge/Modalidad-{val}-blue)")
+        badges.append(f"![](https://img.shields.io/badge/{t['modality']}-{val}-blue)")
         
     if 'difficulty' in activity_data:
         val = str(activity_data['difficulty']).replace('-', '--').replace(' ', '_')
@@ -31,11 +56,11 @@ def generate_badges(activity_data):
             color = 'yellow'
         elif val.lower() in ['avanzado', 'advanced', 'dificil']:
             color = 'red'
-        badges.append(f"![](https://img.shields.io/badge/Dificultad-{val}-{color})")
+        badges.append(f"![](https://img.shields.io/badge/{t['difficulty']}-{val}-{color})")
 
     return " ".join(badges)
 
-def process_file(filepath):
+def process_file(filepath, lang='es'):
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
 
@@ -53,12 +78,27 @@ def process_file(filepath):
     except yaml.YAMLError as e:
         print(f"Error parsing YAML in {filepath}: {e}")
         return
+    
+    # Fallback: check if we have data in top level (simpler frontmatter) matches what generate_activities producs
+    # generate_activities produces flat frontmatter: title, duration, modality, difficulty. 
+    # The original script expected 'activity' key nested. 
+    # Let's support both: direct keys or nested 'activity' dict.
+    
+    activity_data = {}
+    if 'activity' in data:
+        activity_data = data['activity']
+    else:
+        # Check for specific keys in root
+        keys = ['type', 'duration', 'modality', 'difficulty']
+        if any(k in data for k in keys):
+            activity_data = {k: data[k] for k in keys if k in data}
+    
+    if not activity_data:
+         # print(f"Skipping {filepath}: No activity metadata found.")
+         # Silent skip to avoid noise on non-activity files if any
+         return
 
-    if 'activity' not in data:
-        print(f"Skipping {filepath}: No 'activity' key in frontmatter.")
-        return
-
-    badges_line = generate_badges(data['activity'])
+    badges_line = generate_badges(activity_data, lang=lang)
     
     # Construct the marker line
     marker = "<!-- ACTIVITY-BADGES -->"
@@ -88,10 +128,14 @@ def process_file(filepath):
         print(f"No changes needed for {filepath}")
 
 def main():
+    parser = argparse.ArgumentParser(description='Inject badges into activity files.')
+    parser.add_argument('--lang', default='es', choices=['es', 'en', 'fr'], help='Language for badge labels')
+    args = parser.parse_args()
+    
     files = sorted(glob.glob("activities/*.md"))
-    print(f"Found {len(files)} activity files.")
+    print(f"Found {len(files)} activity files. Language: {args.lang}")
     for f in files:
-        process_file(f)
+        process_file(f, lang=args.lang)
 
 if __name__ == "__main__":
     main()

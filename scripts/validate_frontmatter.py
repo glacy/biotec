@@ -31,7 +31,8 @@ required_fields = [
 optional_fields = [
     "activities",
     "evaluation",
-    "references"
+    "references",
+    "keywords"
 ]
 
 status = 0

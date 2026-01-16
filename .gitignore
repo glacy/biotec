@@ -19,6 +19,8 @@ env/
 
 # dev files
 scripts/update_subtitles.py
-presentation-react/
-sessions_BKP/
-sesiones/
+scripts/run_benchmark.sh
+scripts/migrate_content.py
+scripts/validate_frontmatter.py
+
+

@@ -1,99 +1,96 @@
-# Biotecnología
+# Biotechnology
 
-[![deploy](https://github.com/glacy/biotec/actions/workflows/deploy.yml/badge.svg)](https://github.com/glacy/biotec/actions/workflows/deploy.yml)
+[![deploy](https://github.com/glacy/myst-course-starter/actions/workflows/deploy.yml/badge.svg)](https://github.com/glacy/myst-course-starter/actions/workflows/deploy.yml)
 
+**MyST Course Starter**
 
-**FI1105 - Física para Biotecnología.**
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/glacy/myst-course-starter)
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/glacy/biotec)
-
-🚀 **Sitio web oficial (Versión compilada):** [https://glacy.github.io/biotec](https://glacy.github.io/biotec)
+🚀 **Official website (Compiled version):** [https://glacy.github.io/myst-course-starter](https://glacy.github.io/myst-course-starter)
 
 ---
 
-## Sobre este repositorio
+## About this repository
 
-Este repositorio contiene el **código fuente** del curso. A diferencia del sitio web (pensado para estudiantes), este `README` está dirigido a quienes deseen **auditar, replicar o contribuir** al proyecto.
+This software functions as a **Course Generator Engine** and is designed to serve as a template for creating academic courses using [MyST Markdown](https://mystmd.org/).
 
-El curso está construido con **MyST Markdown** y demuestra principios de:
-- **Estructura semántica:** Uso intensivo de frontmatter YAML.
-- **Reproducibilidad:** Entorno controlado y despliegue automatizado.
-- **Documentación como código:** CI/CD con GitHub Actions.
+Its primary role is to decouple **instructional design** from **technical implementation**. By defining your course structure in a single file (`planeamiento.json`), this software automatically:
 
-## Ejecución en la nube (recomendado)
+1.  **Scaffolds structure**: Generates the folder hierarchy and markdown stubs for each session/week.
+2.  **Synchronizes metadata**: Updates site configuration, titles, and navigation.
+3.  **Powers the UI**: Feeds the interactive React-based "Syllabus Viewer" for students.
 
-La forma más sencilla de ejecutar este curso es utilizando **GitHub Codespaces**.
-1. Haga clic en el botón "Open in GitHub Codespaces" de arriba.
-2. Espere a que el entorno se construya (instalará automáticamente todas las dependencias).
-3. Una vez lista la terminal, el entorno `frontmatter-academico` estará activo.
+It is ideal for educators who want a "Compliance-as-Code" approach, ensuring that the course website, documentation, and student viewer always reflect the latest approved syllabus.
 
-### Buenas prácticas (pre-commit)
+### Key Features
+- **Semantic structure:** Driven by YAML frontmatter and JSON schemas.
+- **Reproducibility:** Controlled environment with automated deployment.
+- **Documentation as Code:** Changes to the syllabus are tracked via git and deployed via CI/CD.
 
-Si clonas el repositorio localmente, se recomienda instalar los hooks de git para validación automática:
+## Cloud execution (recommended)
+
+The easiest way to run this course is using **GitHub Codespaces**.
+1. Click on the "Open in GitHub Codespaces" button above.
+2. Wait for the environment to build (it will automatically install all dependencies).
+3. Once the terminal is ready, the `frontmatter-academico` environment will be active.
+
+### Best practices (pre-commit)
+
+If you clone the repository locally, it is recommended to install git hooks for automatic validation:
 
 ```bash
-# Una vez activado el entorno conda
+# Once the conda environment is activated
 pre-commit install
 ```
-Esto validará el frontmatter automáticamente al intentar hacer un commit.
+This will automatically validate the frontmatter when attempting to commit.
 
-> **Nota:** Si necesitas omitir estas validaciones en una emergencia:
-> - **Omitir en un commit:** `git commit -n` (o `--no-verify`)
-> - **Desinstalar hooks:** `pre-commit uninstall`
-> - **Desactivar configuración:** Renombra el archivo: `mv .pre-commit-config.yaml .pre-commit-config.yaml.disabled`
+> **Note:** If you need to skip these validations in an emergency:
+> - **Skip in a commit:** `git commit -n` (or `--no-verify`)
+> - **Uninstall hooks:** `pre-commit uninstall`
+> - **Disable configuration:** Rename the file: `mv .pre-commit-config.yaml .pre-commit-config.yaml.disabled`
 
-## Estructura del proyecto
+## Project structure
 
 ```text
-biotecnologia/
-├── assets/                # 🎨 Recursos estáticos (logos, imágenes)
-├── scripts/               # 🛠️ Scripts de mantenimiento y automatización
-├── tests/                 # 🧪 Pruebas unitarias para los scripts
-├── myst.yml               # ⚙️ Configuración del sitio y metadatos globales
-├── programa.md            # 📄 Programa del curso
-├── planeamiento.json      # 📋 Datos estructurados del planeamiento 
-├── sessions/              # 📚 Contenido del curso (Capítulos)
-├── examples/              # 🧩 Ejemplos de referencia
-├── exercises/             # ✍️ Actividades prácticas
-├── syllabus-viewer/       # ⚛️ Aplicación React para visualizar el programa
-└── .github/               # 🤖 Flujos de automatización (CI/CD)
+myst-course-starter/
+├── assets/                # 🎨 Static resources (logos, images)
+├── scripts/               # 🛠️ Maintenance and automation scripts
+├── tests/                 # 🧪 Unit tests for scripts
+├── myst.yml               # ⚙️ Site configuration and global metadata
+├── programa.md            # 📄 Course program
+├── planeamiento.json      # 📋 Structured planning data 
+├── sessions/              # 📚 Course content (Chapters)
+├── examples/              # 🧩 Reference examples
+├── exercises/             # ✍️ Practical activities
+└── .github/               # 🤖 Automation workflows (CI/CD)
 ```
 
-**Nota sobre la estructura de contenido:**
-El curso sigue una arquitectura modular donde los contenidos prácticos no residen directamente en los archivos de sesión (`sessions/`), sino que se inyectan dinámicamente:
-- **`examples/`**: Contiene ejemplos resueltos y casos de estudio.
-- **`exercises/`**: Contiene los ejercicios propuestos, estructurados semánticamente mediante la directiva `{exercise}` de MyST.
-Esta separación permite reutilizar componentes y facilita el mantenimiento.
-
-**Nota sobre la estructura de contenido:**
-El curso opera como un "Template Starter" impulsado por datos. **`planeamiento.json`** es la única fuente de verdad para:
-1.  **Metadatos del sitio:** Título, autores, semestre y copyright en `myst.yml` (sincronizados vía `scripts/sync_myst.py`).
-2.  **Contenido de las sesiones:** Los archivos en `sessions/` se generan inyectando metadatos del JSON (objetivos, actividades, referencias) en el frontmatter.
-3.  **Visualizador Web:** La aplicación React en `syllabus-viewer/` consume el mismo JSON para renderizar la interfaz.
-
-Para modificar información del curso, edite `planeamiento.json` y ejecute los scripts de actualización.
+**Note on content structure:**
+The course follows a modular architecture where practical content does not reside directly in session files (`sessions/`), but is dynamically injected:
+- **`examples/`**: Contains solved examples and case studies.
+- **`exercises/`**: Contains proposed exercises, structured semantically using MyST's `{exercise}` directive.
+This separation allows component reuse and facilitates maintenance.
 
 
-## Reproducibilidad y configuración local
 
-Para garantizar un entorno de desarrollo consistente, este proyecto utiliza Anaconda/Miniconda.
 
-### 1. Configuración del entorno
+## Reproducibility and local configuration
+
+To ensure a consistent development environment, this project uses Anaconda/Miniconda.
+
+### 1. Environment setup
 ```bash
-# Crear el entorno desde el archivo de configuración
-# Nota: Si clonas el repositorio, usa --recursive para incluir los submódulos
-# git clone --recursive https://github.com/glacy/biotec.git
-
+# Create the environment from the configuration file
 conda env create -f environment.yml
 
-# Activar el entorno
-conda activate frontmatter-academico
+# Activate the environment
+conda activate myst-course-starter
 ```
 
-### 2. Verificación y validación
-Se incluyen scripts para verificar la integridad del entorno y el contenido:
+### 2. Verification and validation
+Scripts are included to verify the integrity of the environment and content:
 
-- **Verificar entorno técnico:**
+- **Verify technical environment:**
   ```bash
   # Linux / macOS / WSL
   ./scripts/verify_env.sh
@@ -101,78 +98,113 @@ Se incluyen scripts para verificar la integridad del entorno y el contenido:
   # Windows (PowerShell)
   .\scripts\verify_env.ps1
   ```
-  Comprueba que todas las herramientas necesarias (MyST, Pandoc, Python, etc.) estén instaladas y accesibles.
+  Checks that all necessary tools (MyST, Pandoc, Python, etc.) are installed and accessible.
 
-- **Validar frontmatter:**
+- **Validate frontmatter:**
   ```bash
   python3 scripts/validate_frontmatter.py
   ```
-  Analiza todos los archivos en `sessions/` para asegurar que cumplen con la estructura de metadatos requerida. **Emite advertencias (no errores)** para campos opcionales como `activities`, `evaluation` y `references`, permitiendo una validación más flexible.
+  Analyzes all files in `sessions/` to ensure they comply with the required metadata structure. **Emits warnings (not errors)** for optional fields such as `activities`, `evaluation`, and `references`, allowing more flexible validation.
 
-- **Generar tabla de sesiones:**
+- **Generate sessions table:**
   ```bash
-  python3 scripts/generate_sessions_table.py
+  python3 scripts/generate_sessions_table_json.py
   ```
-  Escanea los archivos en `sessions/` y regenera automáticamente `sessions_table.md`.
+  Scans files in `sessions/` and automatically regenerates `sessions_table.md`.
 
-- **Generación de skeleton:**
+- **Skeleton generation:**
   ```bash
-  # Sincronizar myst.yml y generar sesiones
+  # Synchronize myst.yml and generate sessions
   python3 scripts/sync_myst.py
   python3 scripts/generate_sessions.py
 
-  # Generar una semana específica
+  # Generate a specific week
   python3 scripts/generate_sessions.py --week 1
+  
+  # Generate sessions in different languages
+  python3 scripts/generate_sessions.py --lang es  # Spanish (default)
+  python3 scripts/generate_sessions.py --lang en  # English
+  python3 scripts/generate_sessions.py --lang fr  # French
   ```
-  Script automatizado que utiliza `planeamiento.json` como única fuente de verdad. El flujo de trabajo recomendado es:
-  1. Modificar `planeamiento.json`.
-  2. Ejecutar `python3 scripts/sync_myst.py` para actualizar metadata.
-  3. Ejecutar `python3 scripts/generate_sessions.py` para regenerar contenido.
-     - **Nota**: Este script genera los temas de contenido como badges grises (shields.io). Por seguridad, **omite archivos existentes**. Use el flag `--force` para confirmar la sobrescritura.
-  4. Ejecutar `python3 scripts/update_toc.py` para corregir enlaces en el índice.
+### 1. Course Scaffolding (Automated)
+The `scaffold_course.py` script is the main entry point for generating the course structure. It orchestrates several steps to ensure a complete project setup:
 
-- **Inyección de Badges en Actividades:**
+```bash
+python3 scripts/scaffold_course.py [--lang {es,en,fr}] [--force]
+```
+
+**What it does:**
+1.  **Directory Verification**: Creates necessary folders (`sessions`, `activities`, `assets`, etc.).
+2.  **Metadata Sync**: Creates `myst.yml` with title, authors, and configuration from `planeamiento.json`.
+3.  **Program Generation**: Creates `programa.md` (syllabus entry point) with course details and schedule table.
+4.  **Content Generation**:
+    -   Generates session Markdown files (`sessions/`).
+    -   Generates activity Markdown skeletons (`activities/`).
+5.  **TOC Construction**: Builds a dynamic Table of Contents in `myst.yml`.
+    -   **Localization**: "Week" labels are localized (e.g., "Semana 1").
+    -   **Hidden Activities**: Activities are added to the build but hidden from the sidebar (`hidden: true`), accessible via links in session files.
+6.  **Badge Injection**: Adds localized "Activity" badges (Duration, Difficulty) to activity files.
+7.  **Overview Table**: Generates a summary table in `sessions_table.md`.
+
+**Arguments:**
+-   `--lang`: Selects the language for generated content, headers, and console output (default: `es`). Supported: `es`, `en`, `fr`.
+-   `--force`: Overwrites existing files. **Includes an interactive confirmation prompt to prevent accidental data loss.**
+
+### 2. Manual/Individual Scripts
+If you need granular control, you can run individual scripts:
+
+- **Generate Sessions:**
   ```bash
-  python3 scripts/inject_activity_header.py
+  python3 scripts/generate_sessions.py --lang en
   ```
-  Inyecta "badges" visuales (imágenes Shields.io) al inicio de cada archivo de actividad (`activities/*.md`) basándose en los metadatos del frontmatter (`duration`, `modality`, `difficulty`). Útil para exponer estos datos en la versión publicada.
+- **Generate Activities:**
+  ```bash
+  python3 scripts/generate_activities.py --lang fr
+  ```
+- **Generate Program:**
+  ```bash
+  python3 scripts/generate_program.py --lang es
+  ```
+- **Inject Badges:**
+  ```bash
+  python3 scripts/inject_activity_header.py --lang en
+  ```
 
 
-### 3. Ejecución del servidor local
+### 3. Local server execution
 
-Una vez configurado y verificado el entorno, puedes iniciar el servidor de desarrollo:
+Once the environment is configured and verified, you can start the development server:
 
 ```bash
 myst start
 ```
-El sitio estará disponible en `http://localhost:3000`.
+The site will be available at `http://localhost:3000`.
 
-### 4. Configuración del Visor de Syllabus (Submódulo)
+### 4. Interactive Syllabus Viewer
 
-El `syllabus-viewer` es un desarrollo independiente del "constructor del curso" (este repositorio). Funciona como una aplicación React autónoma que consume los datos generados, pero tiene su propio ciclo de vida y repositorio: [https://github.com/glacy/syllabus-viewer](https://github.com/glacy/syllabus-viewer).
+The **Syllabus Viewer** is a companion tool to visualize and edit the `planeamiento.json` file. It is now decoupled from this repository and available as a hosted application.
 
-Si deseas desarrollar o construir la aplicación React del `syllabus-viewer`, debes instalar sus dependencias independientemente:
+🚀 **Access the viewer:** [https://glacy.github.io/syllabus-viewer/](https://glacy.github.io/syllabus-viewer/)
 
-```bash
-cd syllabus-viewer
-npm install
-```
-Esto es necesario para resolver tipos de TypeScript (como `vite/client`) y dependencias de construcción.
-
-
-## Asistencia de IA
-
-Este proyecto contó con la asistencia de **Antigravity**, un agente de codificación avanzado desarrollado por el equipo de Google Deepmind. Su papel en el desarrollo incluye:
-
-- **Refactorización y optimización**: Mejora continua de la calidad del código, asegurando consistencia y adherencia a las mejores prácticas en Python, TypeScript y React.
-- **Mantenimiento del entorno**: Gestión de scripts de validación, automatización de flujos de trabajo (CI/CD) y verificación de dependencias.
-- **Documentación dinámica**: Generación y actualización de documentación técnica, como este README, asegurando que refleje el estado actual del proyecto.
-- **Soporte en desarrollo**: Asistencia en tiempo real para la resolución de errores, migración de tecnologías y scaffolding de nuevos componentes.
-- **Prototipado de contenido pedagógico**: Redacción detallada de material instruccional, integrando conceptos físicos con aplicaciones biotecnológicas específicas.
+Use it to:
+- Visually edit your course structure.
+- Export the updated `planeamiento.json` to use with this template.
+- Preview your syllabus layout.
 
 
-## Licencia
+## AI assistance
 
-Este material es abierto.
-- **Contenido:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-- **Código:** MIT
+This project had the assistance of **Antigravity**, an advanced coding agent developed by Google Deepmind's team. Its role in development includes:
+
+- **Refactoring and optimization**: Continuous improvement of code quality, ensuring consistency and adherence to best practices in Python, TypeScript, and React.
+- **Environment maintenance**: Management of validation scripts, workflow automation (CI/CD), and dependency verification.
+- **Dynamic documentation**: Generation and updating of technical documentation, such as this README, ensuring it reflects the current state of the project.
+- **Development support**: Real-time assistance for error resolution, technology migration, and scaffolding of new components.
+- **Pedagogical content prototyping**: Detailed writing of instructional material.
+
+
+## License
+
+This material is open.
+- **Content:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- **Code:** MIT
